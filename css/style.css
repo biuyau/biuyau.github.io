@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Open+Sans:wght@300;400;600;700&display=swap");
 body {
-  font-family: "Open Sans", sans-serif;
-  color: #dbdbdb;
-  background-color: #206868
+	font-family: 'Courier New', monospace;
+	color: #dbdbdb;
+	background-color: #206868
 ;
   overflow-x: hidden;
 }
@@ -49,6 +49,7 @@ body {
   font-weight: bold;
   margin-bottom: 0;
   color: #acffac;
+  font-family: 'Trebuchet MS', sans-serif;
 }
 
 .heading_container h2 span {
@@ -159,6 +160,7 @@ a:focus {
   font-weight: bold;
   font-size: 24px;
   color: #ffffff;
+  text-transform: uppercase;
 }
 
 .custom_nav-container {
@@ -167,6 +169,8 @@ a:focus {
 
 .custom_nav-container .navbar-nav {
   margin-left: auto;
+  font-weight: 900;
+  font-family: 'Trebuchet MS', sans-serif;
 }
 
 .custom_nav-container .navbar-nav .nav-item .nav-link {
@@ -318,11 +322,13 @@ a:focus {
 
 .slider_section .detail-box h1 {
   font-size: 2rem;
-  font-weight: bold;
   text-transform: uppercase;
   margin-bottom: 15px;
   color: #ffffff;
+  font-weight: 900;
+  font-family: 'Trebuchet MS', sans-serif;
 }
+
 .slider_section .detail-box h1 span {
   font-size: 1rem;
   font-weight: bold;
@@ -357,7 +363,9 @@ a:focus {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   border: none;
-  border-radius: 10px;
+  border-radius: 10px;    
+  font-weight: 900;
+  font-family: 'Trebuchet MS', sans-serif;
 }
 
 .slider_section .detail-box .btn-box .btn1:hover {
@@ -391,11 +399,12 @@ a:focus {
 	background-color: #999955;
 	color: #ccff77;
 	font-size: 1rem;
-	font-weight: bold;
 	border-radius: 5px;
 	border: 2px solid #ffffff;
-	margin-right: 5px;
-	margin-bottom: 5px;
+	margin-right: 6px;
+	margin-bottom: 8px;
+    font-weight: 900;
+    font-family: 'Trebuchet MS', sans-serif;
 }
 
 .slider_section .img-box {
