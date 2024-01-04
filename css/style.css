@@ -2,7 +2,7 @@
 body {
   font-family: "Open Sans", sans-serif;
   color: #dbdbdb;
-  background-color: #508888
+  background-color: #206868
 ;
   overflow-x: hidden;
 }
@@ -142,8 +142,8 @@ a:focus {
 }
 
 .header_section {
-	padding: 15px 0;
-	background: linear-gradient(180deg, #0c3b44, #0c3b44, #0c3b4400);
+	padding: 15px 0 50px 0;
+	background: linear-gradient(180deg, #0c3b44, #0c3b44aa, #0c3b4400);
     position: fixed;
     width: 100%;
     z-index: 100;
@@ -395,6 +395,7 @@ a:focus {
 	border-radius: 5px;
 	border: 2px solid #ffffff;
 	margin-right: 5px;
+	margin-bottom: 5px;
 }
 
 .slider_section .img-box {
