@@ -285,11 +285,14 @@ img.mfp-img {
   cursor: auto; }
 
 .mfp-title {
-  text-align: left;
+  text-align: center;
+  width: 100%;
   line-height: 18px;
   color: #F3F3F3;
   word-wrap: break-word;
-  padding-right: 36px; }
+  /*padding-right: 36px; */
+  padding-top: 24px;
+ }
 
 .mfp-image-holder .mfp-content {
   max-width: 100%; }
