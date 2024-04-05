@@ -10,6 +10,8 @@ export class Main extends Scene
 
     preload ()
     {
+        this.load.image('coverBG', 'assets/image/Cover/cover.png');
+
         var progressBox = this.add.graphics();
         progressBox.fillStyle(0x222222, 1);
         progressBox.fillRect(500, 500, 920, 80);
@@ -33,8 +35,8 @@ export class Main extends Scene
         ////////////////////
 
         // video
-        this.load.video('cover', 'assets/video/Cover.mp4', true);
-        this.load.video('trigger', 'assets/video/Trigger.mp4', true);
+        //this.load.video('cover', 'assets/video/Cover.mp4', true);
+        //this.load.video('trigger', 'assets/video/Trigger.mp4', true);
 
         // audio / sound
         //this.load.audio('bgm', 'assets/audio/bgm.wav');
@@ -72,16 +74,16 @@ export class Main extends Scene
         ////////////////////
 
         // intro and videos
-        this.load.video('gameA', 'assets/video/GameA.mp4', true);
+        //this.load.video('gameA', 'assets/video/GameA.mp4', true);
         this.load.image('gameA-intro-cht', 'assets/image/A/intro/intro.png');
         this.load.image('gameA-intro-eng', 'assets/image/A/intro/intro_en.png');
         this.load.image('gameA-arrow', 'assets/image/A/intro/Arrow.png');
 
-        this.load.video('A1-end', 'assets/video/A/A1.mp4', true);
-        this.load.video('A3-end', 'assets/video/A/A3.mp4', true);
-        this.load.video('A4-end', 'assets/video/A/A4.mp4', true);
-        this.load.video('A5-end', 'assets/video/A/A5.mp4', true);
-        this.load.video('gameA-end', 'assets/video/A/GameAEnd.mp4', true);
+        //this.load.video('A1-end', 'assets/video/A/A1.mp4', true);
+        //this.load.video('A3-end', 'assets/video/A/A3.mp4', true);
+        //this.load.video('A4-end', 'assets/video/A/A4.mp4', true);
+        //this.load.video('A5-end', 'assets/video/A/A5.mp4', true);
+        //this.load.video('gameA-end', 'assets/video/A/GameAEnd.mp4', true);
 
         // ui
         this.load.image('progress-bar-bg', 'assets/image/A/progressBar/progress_bar_bg.png');
@@ -159,10 +161,10 @@ export class Main extends Scene
         this.load.image('A5-brush', 'assets/image/A/step5/brush.png');
         
         // step6
-        this.load.video('A6-item1', 'assets/video/A/A6_item1.mp4', true);
-        this.load.video('A6-item2', 'assets/video/A/A6_item2.mp4', true);
-        this.load.video('A6-item3', 'assets/video/A/A6_item3.mp4', true);
-        this.load.video('A6-item4', 'assets/video/A/A6_item4.mp4', true);
+        //this.load.video('A6-item1', 'assets/video/A/A6_item1.mp4', true);
+        //this.load.video('A6-item2', 'assets/video/A/A6_item2.mp4', true);
+        //this.load.video('A6-item3', 'assets/video/A/A6_item3.mp4', true);
+        //this.load.video('A6-item4', 'assets/video/A/A6_item4.mp4', true);
         this.load.image('A6-bg', 'assets/image/A/step6/bg.png');
         this.load.image('A6-item1', 'assets/image/A/step6/item1.png');
         this.load.image('A6-item2', 'assets/image/A/step6/item2.png');
@@ -277,16 +279,29 @@ export class Main extends Scene
         //    console.log(file.src);
         //});
 
-        this.load.on('complete', function () {
+        this.load.on('complete', () => {
             console.log('loading completed');
             progressBar.destroy();
             progressBox.destroy();
             loadingText.destroy();
+            this.coverBG = this.add.image(960, 540, 'coverBG');
+            this.coverBG.setDisplaySize(1920, 1080);  
         });
     }
 
     create ()
     {
+        /*
+        this.log = this.add.text(960, 540, 
+            'Debug message', 
+            { 
+                font: '50px Courier', 
+                fill: '#ff0000', 
+                align: 'center',
+            });
+        this.log.setDepth(10);
+        */
+
         this.time.delayedCall(500, () => {
             this.scale.setParentSize(window.innerWidth, window.innerHeight);
             //this.registry.set('language', this.language);
@@ -323,14 +338,17 @@ export class Main extends Scene
     { 
         console.log('StartCover');
         this.scale.setParentSize(window.innerWidth, window.innerHeight);
-        this.cover = this.add.video(960, 540, 'cover');
-        this.cover.setScale(1.5);                
+        this.cover = this.add.video(960, 540);//, 'cover');
+        this.LoadUrlForVideo(this.cover, 'assets/video/Cover.mp4');
+        //this.cover.loadURL('assets/video/Cover.mp4', true);
+        this.cover.setScale(1.5);
         this.cover.play(true);
 
         //this.sound.play('bgm', { loop: true });
 
-        const trigger = this.add.video(960, 540, 'trigger');
-        trigger.setScale(1.5);
+        //const trigger = this.add.video(960, 540, 'trigger');
+        //trigger.setScale(1.5);
+        
         const coverText = this.add.image(960, 800, 'coverText');
 
         this.tweens.add({
@@ -352,10 +370,12 @@ export class Main extends Scene
 
                 this.sound.play('click');
 
-                this.cover.destroy();
+                //this.cover.destroy();
                 coverText.destroy();
-                trigger.play();
-                trigger.once('complete', () => {
+                this.LoadUrlForVideo(this.cover, 'assets/video/Trigger.mp4');
+                //this.cover.loadURL('assets/video/Trigger.mp4', true);
+                this.cover.play(false);
+                this.cover.once('complete', () => {
 
                     let homeButton = this.add.image(149, 138, 'homeBtn');
                     homeButton.setInteractive();
@@ -415,9 +435,31 @@ export class Main extends Scene
                         gameAButton.disableInteractive();
                         this.sound.play('click');
                         //trigger.destroy();
-
+                        
+                        /*this.LoadUrlForVideo(this.cover, 'assets/video/GameA.mp4');
+                        this.cover.play(false);
+                        this.cover.once('complete', () => {
+                            this.LoadUrlForVideo(this.cover, 'assets/video/A/A1.mp4');
+                            this.cover.play(false);
+                            this.cover.once('complete', () => {
+                                this.LoadUrlForVideo(this.cover, 'assets/video/A/A3.mp4');
+                                this.cover.play(false);
+                                this.cover.once('complete', () => {
+                                    this.LoadUrlForVideo(this.cover, 'assets/video/A/A4.mp4');
+                                    this.cover.play(false);
+                                    this.cover.once('complete', () => {
+                                        this.LoadUrlForVideo(this.cover, 'assets/video/A/A5.mp4');
+                                        this.cover.play(false);
+                                        this.cover.once('complete', () => {
+                                            
+                                        });
+                                    });
+                                });
+                            });
+                        });
+                        */
                         // launch and remove this scene later to prevent dark screen
-                        this.scene.launch('GameA', { language: this.language });                        
+                        this.scene.launch('GameA', { language: this.language, videoObj: this.cover });                        
                         this.time.delayedCall(5000, () => { this.scene.stop(); });     
                     });
                 });
@@ -425,5 +467,89 @@ export class Main extends Scene
             });
 
         //});
+    }
+
+    LoadUrlForVideo(video, url)
+    {
+        if (this.sys.game.device.browser.safari)
+        {
+            console.log('safari!');
+            //url = url.replace('.mp4', '.mov');
+            video.loadURL(url, true);
+            video.play();
+        }
+        //console.log('video loadURL: ' + url);
+        video.loadURL(url, true);
+        this.time.delayedCall(100, () => { video.play(); });
+        /*
+        video.loadURL(url, true);
+        video.on('unsupported', function(video, error){
+            console.log('unsupported: ' + error);
+        }, this);
+
+        video.on('unlocked', function(video, error){
+            console.log('unlocked: ' + error);        
+        }, this);
+
+        video.on('error', function(video, error){
+            console.log('error: ' + error);
+        
+        }, this);
+
+        video.on('metadata', function(video){
+            console.log('metadata');
+        
+        }, this);
+        
+        video.on('timeout', function(video){
+            console.log('timeout');        
+        }, this);
+        
+        video.on('play', function(video){
+        
+        }, this);
+        
+        video.on('playing', function(video){
+        
+        }, this);
+        
+        video.on('textureready', function(video){
+            console.log('textureready');
+        }, this);
+        
+        video.on('complete', function(video){
+            console.log('complete');
+        
+        }, this);
+        
+        video.on('loop', function(video){
+        
+        }, this);
+        
+        video.on('seeking', function(video){
+            console.log('seeking');
+        
+        }, this);
+        
+        video.on('seeked', function(video){
+            console.log('seeked');
+        
+        }, this);
+        
+        video.on('created', function(video, width, height){
+            console.log('created');
+        
+        }, this);
+        
+        video.on('stalled', function(video, width, height){
+            console.log('stalled');
+        
+        }, this);
+        
+        video.on('stop', function(video){
+            console.log('stop');
+        
+        }, this);
+        */
     }
 }

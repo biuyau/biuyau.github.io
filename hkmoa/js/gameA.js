@@ -19,7 +19,11 @@ export class GameA extends Scene
     init (data)
     {
         if (data != null)
+        {
             this.language = data.language;
+            //this.videoObj = data.videoObj; 
+            //this.add.existing(this.videoObj);
+        }
         console.log('[GameA] init -> language: ' + this.language);
     }
 
@@ -143,6 +147,18 @@ export class GameA extends Scene
 
     create ()
     {
+        /*
+        this.video = this.add.video(960, 540);
+        this.video.setScale(1.5);
+        this.log = this.add.text(960, 540, 
+            'Debug message', 
+            { 
+                font: '50px Courier', 
+                fill: '#ff0000', 
+                align: 'center',
+            });
+        this.log.setDepth(10);
+        */
         console.log('GameA: create()');
         this.scene.launch('GameA-Tutor', { language: this.language });
         this.scene.launch('GameA-UI', { language: this.language, resetCallback: this.ReturnHome });
@@ -154,21 +170,24 @@ export class GameA extends Scene
         this.step5Group = this.add.group();
         this.step6Group = this.add.group();
 
-        this.StartIntro();
-        //this.time.delayedCall(1000, () => { this.StartIntro(); });
+        //this.StartIntro();
+        this.time.delayedCall(200, () => { this.StartIntro(); });
         //this.StartStep2();
     }
 
     StartIntro()
     {
-        const intro = this.add.video(960, 540, 'gameA');
+        const intro = this.add.video(960, 540);//, 'gameA');
         intro.setScale(1.5);
+
         const introText = new LocalizedImage(this, 960, 540, 'gameA-intro-cht', 'gameA-intro-eng');
         introText.SetLocalization(this.language);   
         introText.setScale(1.5);  
         introText.alpha = 0;
 
-        intro.play();
+        this.LoadUrlForVideo(intro, 'assets/video/GameA.mp4');
+            //intro.loadURL('assets/video/GameA.mp4', true);
+        //intro.play();
         intro.once('complete', () => {            
             // intro message
             this.tweens.chain({
@@ -233,6 +252,7 @@ export class GameA extends Scene
             //introGroup.add(arrow);
             //introGroup.add(rect);
         });
+        
     }
 
     StartStep1()
@@ -367,12 +387,16 @@ export class GameA extends Scene
         this.step1Cloths.forEach((cloth) => { cloth.setVisible(false); });
         this.step1ConfirmBtn.setVisible(false);
 
-        const end = this.add.video(960, 540, 'A1-end');
+        //const end = this.add.video(960, 540, 'A1-end');
+        //end.setScale(1.5);
+        const end = this.add.video(960, 540);
         end.setScale(1.5);
         
         this.time.delayedCall(2500, () =>{ 
             this.events.emit('step-end');
-            end.play(); 
+            this.LoadUrlForVideo(end, 'assets/video/A/A1.mp4');
+            //end.loadURL('assets/video/A/A1.mp4', true);
+            //end.play(); 
             this.tweens.add({
                 targets: end,
                 alpha: {from: 0, to: 1},
@@ -677,19 +701,20 @@ export class GameA extends Scene
         // auto complete the reveal image
         this.step3Reveal.Complete();
 
-        const end = this.add.video(960, 540, 'A3-end');
+        const end = this.add.video(960, 540);//, 'A3-end');
         end.setScale(1.5);
         
         this.time.delayedCall(2500, () => { 
             this.events.emit('step-end');
-            end.play();
+            this.LoadUrlForVideo(end, 'assets/video/A/A3.mp4');
+            //end.loadURL('assets/video/A/A3.mp4', true);
+            //end.play();
             this.tweens.add({
                 targets: end,
                 alpha: {from: 0, to: 1},
                 duration: 1000
             });
-        });        
-        
+        });                
 
         end.once('complete', () => {
             end.destroy();
@@ -813,7 +838,7 @@ export class GameA extends Scene
         // remove interactives
         this.step4Papers.forEach((paper) => { paper.setVisible(false); });
                         
-        const end = this.add.video(960, 540, 'A4-end');     
+        const end = this.add.video(960, 540);//, 'A4-end');     
         end.setScale(1.5);   
         
         this.time.delayedCall(2000, () =>{ 
@@ -825,13 +850,15 @@ export class GameA extends Scene
             overlay.setInteractive();
             this.input.setDraggable(overlay);
             overlay.on('drag', (pointer, x, y) => {
-                console.log(y);
+                //console.log(y);
                 if (y < 440)
                 {
                     overlay.destroy();
                     arrow.destroy();
     
-                    end.play();
+                    this.LoadUrlForVideo(end, 'assets/video/A/A4.mp4');
+                    //end.loadURL('assets/video/A/A4.mp4', true);
+                    //end.play();
                 }
     
             });
@@ -999,12 +1026,14 @@ export class GameA extends Scene
         // auto complete the reveal image
         this.step5Reveal.Complete();
 
-        const end = this.add.video(960, 540, 'A5-end');
+        const end = this.add.video(960, 540);//, 'A5-end');
         end.setScale(1.5);
         
         this.time.delayedCall(2500, () => { 
             this.events.emit('step-end');
-            end.play();
+            this.LoadUrlForVideo(end, 'assets/video/A/A5.mp4');
+            //end.loadURL('assets/video/A/A5.mp4', true);
+            //end.play();
             this.tweens.add({
                 targets: end,
                 alpha: {from: 0, to: 1},
@@ -1079,7 +1108,7 @@ export class GameA extends Scene
             this.step6items.push(itemBtn);
             this.step6Group.add(itemBtn);
 
-            const video = this.add.video(960, 540,  'A6-item' + (i+1));
+            const video = this.add.video(960, 540);//,  'A6-item' + (i+1));
             video.setScale(1.5);
             this.step6ItemVideos.push(video);
             this.step6Group.add(video);
@@ -1114,7 +1143,9 @@ export class GameA extends Scene
                 });
 
                 // play item video
-                this.step6ItemVideos[this.step6NextItem].play();
+                this.LoadUrlForVideo(this.step6ItemVideos[this.step6NextItem], 'assets/video/A/A6_item' + (this.step6NextItem+1) + '.mp4');
+                //this.step6ItemVideos[this.step6NextItem].loadURL('assets/video/A/A6_item' + (this.step6NextItem+1) + '.mp4', true);
+                //this.step6ItemVideos[this.step6NextItem].play();
                 this.step6ItemVideos[this.step6NextItem].once('complete', () => {                    
                     selectedItem = -1;
                     this.step6NextItem++;
@@ -1179,7 +1210,11 @@ export class GameA extends Scene
         if (this.step6NextItem < this.step6items.length)
         {
             if (!this.step6ItemVideos[this.step6NextItem].isPlaying())
-                this.step6ItemVideos[this.step6NextItem].play();
+            {
+                this.LoadUrlForVideo(this.step6ItemVideos[this.step6NextItem], 'assets/video/A/A6_item' + (this.step6NextItem+1) + '.mp4');
+                //this.step6ItemVideos[this.step6NextItem].loadURL('assets/video/A/A6_item' + (this.step6NextItem+1) + '.mp4', true);
+                //this.step6ItemVideos[this.step6NextItem].play();
+            }
             this.step6ItemVideos[this.step6NextItem].off('complete');
             this.step6ItemVideos[this.step6NextItem].once('complete', () => {       
                 this.step6NextItem++;
@@ -1219,14 +1254,16 @@ export class GameA extends Scene
 
     StartEnding()
     {
-        const ending = this.add.video(960, 540, 'gameA-end');
+        const ending = this.add.video(960, 540);//, 'gameA-end');
         ending.setScale(1.5);
         const endingText = new LocalizedImage(this, 960, 540, 'gameA-end-cht', 'gameA-end-eng');
         endingText.setScale(1.5);
         endingText.SetLocalization(this.language);     
         endingText.alpha = 0;
 
-        ending.play();
+        this.LoadUrlForVideo(ending, 'assets/video/A/GameAEnd.mp4');
+        //ending.loadURL('assets/video/A/GameAEnd.mp4', true);
+        //ending.play();
         ending.once('complete', () => {            
             // intro message
             this.tweens.chain({
@@ -1392,7 +1429,93 @@ export class GameA extends Scene
         this.scene.stop('GameA-Tutor');
         this.scene.stop('GameA-UI');
         this.scene.stop();
+        
+        this.sound.play('click');
 
         location.reload();
+    }
+
+    LoadUrlForVideo(video, url)
+    {
+        if (this.sys.game.device.browser.safari)
+        {
+            console.log('safari!');
+            //url = url.replace('.mp4', '.mov');
+            video.loadURL(url, true);
+            video.play();
+        }
+        //console.log('video loadURL: ' + url);
+        video.loadURL(url, true);
+        this.time.delayedCall(100, () => { video.play(); });
+        
+        /*
+        video.on('unsupported', function(video, error){
+            console.log('unsupported: ' + error);
+        }, this);
+
+        video.on('unlocked', function(video, error){
+            console.log('unlocked: ' + error);        
+        }, this);
+
+        video.on('error', function(video, error){
+            console.log('error: ' + error);
+        
+        }, this);
+
+        video.on('metadata', function(video){
+            console.log('metadata');
+        
+        }, this);
+        
+        video.on('timeout', function(video){
+            console.log('timeout');        
+        }, this);
+        
+        video.on('play', function(video){
+        
+        }, this);
+        
+        video.on('playing', function(video){
+        
+        }, this);
+        
+        video.on('textureready', function(video){
+            console.log('textureready');
+        }, this);
+        
+        video.on('complete', function(video){
+            console.log('complete');
+        
+        }, this);
+        
+        video.on('loop', function(video){
+        
+        }, this);
+        
+        video.on('seeking', function(video){
+            console.log('seeking');
+        
+        }, this);
+        
+        video.on('seeked', function(video){
+            console.log('seeked');
+        
+        }, this);
+        
+        video.on('created', function(video, width, height){
+            console.log('created');
+        
+        }, this);
+        
+        video.on('stalled', function(video, width, height){
+            console.log('stalled');
+        
+        }, this);
+        
+        video.on('stop', function(video){
+            console.log('stop');
+        
+        }, this);
+        */
     }
 }
