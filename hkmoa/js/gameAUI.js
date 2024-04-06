@@ -1,5 +1,5 @@
 import { Scene } from 'phaser';
-import { LocalizedImage } from './localizedImage.js';
+//import { LocalizedImage } from './localizedImage.js';
 
 export class GameAUI extends Scene
 {
@@ -94,8 +94,9 @@ export class GameAUI extends Scene
             // create images
             const node = this.add.image(posX + i * stepX, 0, 'progress-bar-step');
             const complete = this.add.image(posX + i * stepX, 0, 'progress-bar-step-complete');
-            const text = new LocalizedImage(this, posX + i * stepX, 100, 'progress-text' + (i+1) +'-cht', 'progress-text' + (i+1) + '-eng');
-            text.SetLocalization(this.language);
+            //const text = new LocalizedImage(this, posX + i * stepX, 100, 'progress-text' + (i+1) +'-cht', 'progress-text' + (i+1) + '-eng');
+            //text.SetLocalization(this.language);
+            const text = this.add.image(posX + i * stepX, 100, this.language === 0 ? 'progress-text' + (i+1) +'-cht' : 'progress-text' + (i+1) + '-eng');
             // add to container
             this.progressBar.add(node);
             this.progressBar.add(complete);

@@ -1,6 +1,6 @@
 import { Scene } from 'phaser';
 import * as Phaser from 'phaser';
-import { LocalizedImage } from './localizedImage.js';
+//import { LocalizedImage } from './localizedImage.js';
 import { RevealImage } from './revealImage.js';
 
 export class GameA extends Scene
@@ -29,12 +29,68 @@ export class GameA extends Scene
 
     preload ()
     {
-        /*
-        this.load.video('A1-end', 'assets/video/A/A1.mp4', true);
-        this.load.video('A3-end', 'assets/video/A/A3.mp4', true);
-        this.load.video('A4-end', 'assets/video/A/A4.mp4', true);
-        this.load.video('A5-end', 'assets/video/A/A5.mp4', true);
-        this.load.video('gameA-end', 'assets/video/A/gameAEnd.mp4', true);
+        var loadingBG = this.add.graphics();
+        loadingBG.fillStyle(0x000000, 0.8);
+        loadingBG.fillRect(0, 0, 1920, 1080);
+        loadingBG.setInteractive();
+        var progressBox = this.add.graphics();
+        progressBox.fillStyle(0x222222, 1);
+        progressBox.fillRect(500, 500, 920, 80);
+        var progressBar = this.add.graphics();
+        var loadingText = this.make.text({
+            x: 960,
+            y: 420,
+            text: '\n載入中...\nLoading...\n',
+            style: {
+                font: '30px Courier',
+                fill: '#ffffff',
+                align: 'center',
+                lineSpacing: 20,
+                wordWrap: { width: 1200, useAdvancedWrap: true }
+            }
+        });
+        loadingText.setOrigin(0.5, 0.5);
+
+        ////////////////////
+        // Game A
+        ////////////////////
+        this.load.atlas('award', 'assets/image/award.png', 'assets/image/award.json');
+        this.load.atlas('timesup', 'assets/image/timesup.png', 'assets/image/timesup.json');
+
+        // intro and videos
+        //this.load.video('gameA', 'assets/video/GameA.mp4', true);
+        this.load.image('gameA-intro-cht', 'assets/image/A/intro/intro.png');
+        this.load.image('gameA-intro-eng', 'assets/image/A/intro/intro_en.png');
+        this.load.image('gameA-arrow', 'assets/image/A/intro/Arrow.png');
+
+        // ui
+        this.load.image('progress-bar-bg', 'assets/image/A/progressBar/progress_bar_bg.png');
+        this.load.image('progress-bar-fill', 'assets/image/A/progressBar/progress_bar.png');
+        this.load.image('progress-bar-step', 'assets/image/A/progressBar/step.png');
+        this.load.image('progress-bar-step-complete', 'assets/image/A/progressBar/step_complete.png');
+        this.load.image('progress-bar-step-current', 'assets/image/A/progressBar/current_step.png');
+        this.load.image('progress-bar-step-current-frame', 'assets/image/A/progressBar/current_step_frame.png');
+        this.load.image('progress-bar-step-current-fill', 'assets/image/A/progressBar/current_step_fill.png');
+
+        
+        if (this.language === 0)
+        {
+            this.load.image('progress-text1-cht', 'assets/image/A/progressBar/Progress1.png');
+            this.load.image('progress-text2-cht', 'assets/image/A/progressBar/Progress2.png');
+            this.load.image('progress-text3-cht', 'assets/image/A/progressBar/Progress3.png');
+            this.load.image('progress-text4-cht', 'assets/image/A/progressBar/Progress4.png');
+            this.load.image('progress-text5-cht', 'assets/image/A/progressBar/Progress5.png');
+            this.load.image('progress-text6-cht', 'assets/image/A/progressBar/Progress6.png');
+        }
+        else
+        {
+            this.load.image('progress-text1-eng', 'assets/image/A/progressBar/Progress1_en.png');
+            this.load.image('progress-text2-eng', 'assets/image/A/progressBar/Progress2_en.png');
+            this.load.image('progress-text3-eng', 'assets/image/A/progressBar/Progress3_en.png');
+            this.load.image('progress-text4-eng', 'assets/image/A/progressBar/Progress4_en.png');
+            this.load.image('progress-text5-eng', 'assets/image/A/progressBar/Progress5_en.png');
+            this.load.image('progress-text6-eng', 'assets/image/A/progressBar/Progress6_en.png');
+        }
 
         // step1
         this.load.image('A1-base', 'assets/image/A/step1/Step_1-BG.jpg');
@@ -53,14 +109,20 @@ export class GameA extends Scene
         this.load.image('A2-brush2', 'assets/image/A/step2/brush2.png');
         this.load.image('A2-brush3', 'assets/image/A/step2/brush3.png');
         this.load.image('A2-brush4', 'assets/image/A/step2/brush4.png');
-        this.load.image('A2-text1-cht', 'assets/image/A/step2/text1.png');
-        this.load.image('A2-text2-cht', 'assets/image/A/step2/text2.png');
-        this.load.image('A2-text3-cht', 'assets/image/A/step2/text3.png');
-        this.load.image('A2-text4-cht', 'assets/image/A/step2/text4.png');
-        this.load.image('A2-text1-eng', 'assets/image/A/step2/text1_en.png');
-        this.load.image('A2-text2-eng', 'assets/image/A/step2/text2_en.png');
-        this.load.image('A2-text3-eng', 'assets/image/A/step2/text3_en.png');
-        this.load.image('A2-text4-eng', 'assets/image/A/step2/text4_en.png');
+        if (this.language === 0)
+        {
+            this.load.image('A2-text1-cht', 'assets/image/A/step2/text1.png');
+            this.load.image('A2-text2-cht', 'assets/image/A/step2/text2.png');
+            this.load.image('A2-text3-cht', 'assets/image/A/step2/text3.png');
+            this.load.image('A2-text4-cht', 'assets/image/A/step2/text4.png');
+        }
+        else
+        {
+            this.load.image('A2-text1-eng', 'assets/image/A/step2/text1_en.png');
+            this.load.image('A2-text2-eng', 'assets/image/A/step2/text2_en.png');
+            this.load.image('A2-text3-eng', 'assets/image/A/step2/text3_en.png');
+            this.load.image('A2-text4-eng', 'assets/image/A/step2/text4_en.png');
+        }
 
         // step3
         this.load.image('A3-brush', 'assets/image/A/step3/correctBrush.png');
@@ -89,60 +151,150 @@ export class GameA extends Scene
         this.load.image('A5-brush', 'assets/image/A/step5/brush.png');
         
         // step6
-        this.load.video('A6-item1', 'assets/video/A/A6_item1.mp4', true);
-        this.load.video('A6-item2', 'assets/video/A/A6_item2.mp4', true);
-        this.load.video('A6-item3', 'assets/video/A/A6_item3.mp4', true);
-        this.load.video('A6-item4', 'assets/video/A/A6_item4.mp4', true);
         this.load.image('A6-bg', 'assets/image/A/step6/bg.png');
         this.load.image('A6-item1', 'assets/image/A/step6/item1.png');
         this.load.image('A6-item2', 'assets/image/A/step6/item2.png');
         this.load.image('A6-item3', 'assets/image/A/step6/item3.png');
         this.load.image('A6-item4', 'assets/image/A/step6/item4.png');
-        this.load.image('A6-text1-cht', 'assets/image/A/step6/item1_text.png');
-        this.load.image('A6-text2-cht', 'assets/image/A/step6/item2_text.png');
-        this.load.image('A6-text3-cht', 'assets/image/A/step6/item3_text.png');
-        this.load.image('A6-text4-cht', 'assets/image/A/step6/item4_text.png');
-        this.load.image('A6-text1-eng', 'assets/image/A/step6/item1_text_en.png');
-        this.load.image('A6-text2-eng', 'assets/image/A/step6/item2_text_en.png');
-        this.load.image('A6-text3-eng', 'assets/image/A/step6/item3_text_en.png');
-        this.load.image('A6-text4-eng', 'assets/image/A/step6/item4_text_en.png');
+        if (this.language === 0)
+        {
+            this.load.image('A6-text1-cht', 'assets/image/A/step6/item1_text.png');
+            this.load.image('A6-text2-cht', 'assets/image/A/step6/item2_text.png');
+            this.load.image('A6-text3-cht', 'assets/image/A/step6/item3_text.png');
+            this.load.image('A6-text4-cht', 'assets/image/A/step6/item4_text.png');
+        }
+        else
+        {
+            this.load.image('A6-text1-eng', 'assets/image/A/step6/item1_text_en.png');
+            this.load.image('A6-text2-eng', 'assets/image/A/step6/item2_text_en.png');
+            this.load.image('A6-text3-eng', 'assets/image/A/step6/item3_text_en.png');
+            this.load.image('A6-text4-eng', 'assets/image/A/step6/item4_text_en.png');
+        }
 
         // ending
-        this.load.image('gameA-end-cht', 'assets/image/A/end/G1-End-cn.png');
-        this.load.image('gameA-end-eng', 'assets/image/A/end/G1-End-en.png');
+        if (this.language === 0)
+        {
+            this.load.image('gameA-end-cht', 'assets/image/A/end/G1-End-cn.png');       
+        }
+        else
+        {
+            this.load.image('gameA-end-eng', 'assets/image/A/end/G1-End-en.png');
+        }
 
         // result
         this.load.image('gameA-result-bg', 'assets/image/A/result/bg.png');
         this.load.image('gameA-result-icon', 'assets/image/A/result/icon.png');
-        this.load.image('gameA-result-award1-cht', 'assets/image/A/result/award1.png');
-        this.load.image('gameA-result-award2-cht', 'assets/image/A/result/award2.png');
-        this.load.image('gameA-result-award3-cht', 'assets/image/A/result/award3.png');
-        this.load.image('gameA-result-award4-cht', 'assets/image/A/result/award4.png');
-        this.load.image('gameA-result-award5-cht', 'assets/image/A/result/award5.png');
-        this.load.image('gameA-result-award6-cht', 'assets/image/A/result/award6.png');
-        this.load.image('gameA-result-award7-cht', 'assets/image/A/result/award7.png');
-        this.load.image('gameA-result-award8-cht', 'assets/image/A/result/award8.png');
-        this.load.image('gameA-result-award1-eng', 'assets/image/A/result/award1_en.png');
-        this.load.image('gameA-result-award2-eng', 'assets/image/A/result/award2_en.png');
-        this.load.image('gameA-result-award3-eng', 'assets/image/A/result/award3_en.png');
-        this.load.image('gameA-result-award4-eng', 'assets/image/A/result/award4_en.png');
-        this.load.image('gameA-result-award5-eng', 'assets/image/A/result/award5_en.png');
-        this.load.image('gameA-result-award6-eng', 'assets/image/A/result/award6_en.png');
-        this.load.image('gameA-result-award7-eng', 'assets/image/A/result/award7_en.png');
-        this.load.image('gameA-result-award8-eng', 'assets/image/A/result/award8_en.png');
-        this.load.image('gameA-result-rank1-cht', 'assets/image/A/result/rank1.png');
-        this.load.image('gameA-result-rank2-cht', 'assets/image/A/result/rank2.png');
-        this.load.image('gameA-result-rank3-cht', 'assets/image/A/result/rank3.png');
-        this.load.image('gameA-result-rank1-eng', 'assets/image/A/result/rank1_en.png');
-        this.load.image('gameA-result-rank2-eng', 'assets/image/A/result/rank2_en.png');
-        this.load.image('gameA-result-rank3-eng', 'assets/image/A/result/rank3_en.png');
-        this.load.image('chtBtn', 'assets/image/Cover/CN-Disable.png');
-        this.load.image('engBtn', 'assets/image/Cover/EN-Disable.png');
-        this.load.image('chtBtnOn', 'assets/image/Cover/CN-Enable.png');
-        this.load.image('engBtnOn', 'assets/image/Cover/EN-Enable.png');
-        this.load.image('chtMenu', 'assets/image/Cover/CN-Menu.png');
-        this.load.image('engMenu', 'assets/image/Cover/EN-Menu.png');
-        */
+        if (this.language === 0)
+        {
+            this.load.image('gameA-result-award1-cht', 'assets/image/A/result/award1.png');
+            this.load.image('gameA-result-award2-cht', 'assets/image/A/result/award2.png');
+            this.load.image('gameA-result-award3-cht', 'assets/image/A/result/award3.png');
+            this.load.image('gameA-result-award4-cht', 'assets/image/A/result/award4.png');
+            this.load.image('gameA-result-award5-cht', 'assets/image/A/result/award5.png');
+            this.load.image('gameA-result-award6-cht', 'assets/image/A/result/award6.png');
+            this.load.image('gameA-result-award7-cht', 'assets/image/A/result/award7.png');
+            this.load.image('gameA-result-award8-cht', 'assets/image/A/result/award8.png');        
+        }
+        else
+        {
+            this.load.image('gameA-result-award1-eng', 'assets/image/A/result/award1_en.png');
+            this.load.image('gameA-result-award2-eng', 'assets/image/A/result/award2_en.png');
+            this.load.image('gameA-result-award3-eng', 'assets/image/A/result/award3_en.png');
+            this.load.image('gameA-result-award4-eng', 'assets/image/A/result/award4_en.png');
+            this.load.image('gameA-result-award5-eng', 'assets/image/A/result/award5_en.png');
+            this.load.image('gameA-result-award6-eng', 'assets/image/A/result/award6_en.png');
+            this.load.image('gameA-result-award7-eng', 'assets/image/A/result/award7_en.png');
+            this.load.image('gameA-result-award8-eng', 'assets/image/A/result/award8_en.png');
+            this.load.image('gameA-result-rank1-cht', 'assets/image/A/result/rank1.png');
+            this.load.image('gameA-result-rank2-cht', 'assets/image/A/result/rank2.png');
+            this.load.image('gameA-result-rank3-cht', 'assets/image/A/result/rank3.png');
+            this.load.image('gameA-result-rank1-eng', 'assets/image/A/result/rank1_en.png');
+            this.load.image('gameA-result-rank2-eng', 'assets/image/A/result/rank2_en.png');
+            this.load.image('gameA-result-rank3-eng', 'assets/image/A/result/rank3_en.png');
+        }  
+            
+        // tutor  
+        if (this.language === 0)
+        { 
+            // cht
+            this.load.image('tutor-timesup-cht', 'assets/image/A/tutor/cht/timeout.png');
+            this.load.image('tutor-a1-intro-cht', 'assets/image/A/tutor/cht/1a.png');
+            this.load.image('tutor-a1-correct-cht', 'assets/image/A/tutor/cht/1c.png');
+            this.load.image('tutor-a1-wrong-cht', 'assets/image/A/tutor/cht/1b.png');
+
+            this.load.image('tutor-a2-intro-cht', 'assets/image/A/tutor/cht/2a-1.png');
+            this.load.image('tutor-a2-intro2-cht', 'assets/image/A/tutor/cht/2a-2.png');
+            this.load.image('tutor-a2-correct-cht', 'assets/image/A/tutor/cht/2c.png');
+            this.load.image('tutor-a2-wrong-cht', 'assets/image/A/tutor/cht/2b.png');
+
+            this.load.image('tutor-a3-intro-cht', 'assets/image/A/tutor/cht/3a-1.png');
+            this.load.image('tutor-a3-intro2-cht', 'assets/image/A/tutor/cht/3a-2.png');
+            this.load.image('tutor-a3-correct-cht', 'assets/image/A/tutor/cht/3c.png');
+
+            this.load.image('tutor-a4-intro-cht', 'assets/image/A/tutor/cht/4a.png');
+            this.load.image('tutor-a4-correct-cht', 'assets/image/A/tutor/cht/4c-1.png');
+            this.load.image('tutor-a4-correct2-cht', 'assets/image/A/tutor/cht/4c-2.png');
+
+            this.load.image('tutor-a5-intro-cht', 'assets/image/A/tutor/cht/5a-1.png');
+            this.load.image('tutor-a5-intro2-cht', 'assets/image/A/tutor/cht/5a-2.png');
+            this.load.image('tutor-a5-correct-cht', 'assets/image/A/tutor/cht/5c.png');
+
+            this.load.image('tutor-a6-intro-cht', 'assets/image/A/tutor/cht/6a-1.png');
+            this.load.image('tutor-a6-intro2-cht', 'assets/image/A/tutor/cht/6a-2.png');
+            this.load.image('tutor-a6-correct-cht', 'assets/image/A/tutor/cht/6c.png');
+            this.load.image('tutor-a6-wrong-cht', 'assets/image/A/tutor/cht/6b.png');
+
+        }
+        else
+        {
+            // eng
+            this.load.image('tutor-timesup-eng', 'assets/image/A/tutor/eng/timeout.png');
+            this.load.image('tutor-a1-intro-eng', 'assets/image/A/tutor/eng/1a.png');
+            this.load.image('tutor-a1-correct-eng', 'assets/image/A/tutor/eng/1c.png');
+            this.load.image('tutor-a1-wrong-eng', 'assets/image/A/tutor/eng/1b.png');
+
+            this.load.image('tutor-a2-intro-eng', 'assets/image/A/tutor/eng/2a-1.png');
+            this.load.image('tutor-a2-intro2-eng', 'assets/image/A/tutor/eng/2a-2.png');
+            this.load.image('tutor-a2-correct-eng', 'assets/image/A/tutor/eng/2c.png');
+            this.load.image('tutor-a2-wrong-eng', 'assets/image/A/tutor/eng/2b.png');
+
+            this.load.image('tutor-a3-intro-eng', 'assets/image/A/tutor/eng/3a-1.png');
+            this.load.image('tutor-a3-intro2-eng', 'assets/image/A/tutor/eng/3a-2.png');
+            this.load.image('tutor-a3-correct-eng', 'assets/image/A/tutor/eng/3c.png');
+
+            this.load.image('tutor-a4-intro-eng', 'assets/image/A/tutor/eng/4a.png');
+            this.load.image('tutor-a4-correct-eng', 'assets/image/A/tutor/eng/4c-1.png');
+            this.load.image('tutor-a4-correct2-eng', 'assets/image/A/tutor/eng/4c-2.png');
+
+            this.load.image('tutor-a5-intro-eng', 'assets/image/A/tutor/eng/5a-1.png');
+            this.load.image('tutor-a5-intro2-eng', 'assets/image/A/tutor/eng/5a-2.png');
+            this.load.image('tutor-a5-correct-eng', 'assets/image/A/tutor/eng/5c.png');
+
+            this.load.image('tutor-a6-intro-eng', 'assets/image/A/tutor/eng/6a-1.png');
+            this.load.image('tutor-a6-intro2-eng', 'assets/image/A/tutor/eng/6a-2.png');
+            this.load.image('tutor-a6-correct-eng', 'assets/image/A/tutor/eng/6c.png');
+            this.load.image('tutor-a6-wrong-eng', 'assets/image/A/tutor/eng/6b.png');
+        }
+       
+        this.load.on('progress', function (value) {
+            //console.log(value);
+            progressBar.clear();
+            progressBar.fillStyle(0xffffff, 1);
+            progressBar.fillRect(510, 510, 900 * value, 60);
+            
+        });
+                    
+        //this.load.on('fileprogress', function (file) {
+        //    console.log(file.src);
+        //});
+
+        this.load.on('complete', () => {
+            console.log('loading completed');
+            loadingBG.destroy();
+            progressBar.destroy();
+            progressBox.destroy();
+            loadingText.destroy();
+        });
     }
 
     create ()
@@ -169,9 +321,14 @@ export class GameA extends Scene
         this.step4Group = this.add.group();
         this.step5Group = this.add.group();
         this.step6Group = this.add.group();
-
+                      
+        this.time.delayedCall(500, () => { 
+            this.scene.stop('Main'); 
+        });     
         //this.StartIntro();
-        this.time.delayedCall(200, () => { this.StartIntro(); });
+        this.time.delayedCall(100, () => { 
+            this.StartIntro(); 
+        });
         //this.StartStep2();
     }
 
@@ -180,8 +337,9 @@ export class GameA extends Scene
         const intro = this.add.video(960, 540);//, 'gameA');
         intro.setScale(1.5);
 
-        const introText = new LocalizedImage(this, 960, 540, 'gameA-intro-cht', 'gameA-intro-eng');
-        introText.SetLocalization(this.language);   
+        //const introText = new LocalizedImage(this, 960, 540, 'gameA-intro-cht', 'gameA-intro-eng');
+        //introText.SetLocalization(this.language);   
+        const introText = this.add.image(960, 540, this.language === 0 ? 'gameA-intro-cht' : 'gameA-intro-eng');
         introText.setScale(1.5);  
         introText.alpha = 0;
 
@@ -439,10 +597,12 @@ export class GameA extends Scene
             const brushBtn = this.add.container(posX + i * stepX, posY);
             const brush = this.add.image(0, 0, 'A2-brush' + (i+1));
             brush.setScale(850 / brush.height);
-            const brushTextBG = new LocalizedImage(this, 0, -180, 'textBG-cht', 'textBG-eng');
-            brushTextBG.SetLocalization(this.language);
-            const brushText = new LocalizedImage(this, 0, -180, 'A2-text' + (i+1) + '-cht', 'A2-text' + (i+1) + '-eng');
-            brushText.SetLocalization(this.language);
+            //const brushTextBG = new LocalizedImage(this, 0, -180, 'textBG-cht', 'textBG-eng');
+            //brushTextBG.SetLocalization(this.language);
+            //const brushText = new LocalizedImage(this, 0, -180, 'A2-text' + (i+1) + '-cht', 'A2-text' + (i+1) + '-eng');
+            //brushText.SetLocalization(this.language);
+            const brushTextBG = this.add.image(0, -180, this.language === 0 ? 'textBG-cht' : 'textBG-eng');
+            const brushText = this.add.image(0, -180, this.language === 0 ? 'A2-text' + (i+1) + '-cht' : 'A2-text' + (i+1) + '-eng');
             brushBtn.add([brush, brushTextBG, brushText]);
 
             brushBtn.setSize(Math.max(brush.displayWidth, 250), brush.displayHeight);
@@ -571,8 +731,9 @@ export class GameA extends Scene
             fill: '#ffffff', 
             align: 'left'
         }).setOrigin(0.5, 1);
-        const progressText = new LocalizedImage(this, 0, 100, 'progress-cht', 'progress-eng');
-        progressText.SetLocalization(this.language);
+        //const progressText = new LocalizedImage(this, 0, 100, 'progress-cht', 'progress-eng');
+        //progressText.SetLocalization(this.language);
+        const progressText = this.add.image(0, 100, this.language === 0 ? 'progress-cht' : 'progress-eng');
         progressUI.add([progressValue, progressPercent, progressText]);
         progressUI.alpha = 0;
 
@@ -1078,10 +1239,12 @@ export class GameA extends Scene
             const item = this.add.image(0, 0, 'A6-item' + (i+1));
             item.setDisplaySize(360, 360);
             item.setAngle(30);
-            const itemTextBG = new LocalizedImage(this, 0, 0, 'textBG-cht', 'textBG-eng');
-            itemTextBG.SetLocalization(this.language);
-            const itemText = new LocalizedImage(this, 0, 0, 'A6-text' + (i+1) + '-cht', 'A6-text' + (i+1) + '-eng');
-            itemText.SetLocalization(this.language);
+            //const itemTextBG = new LocalizedImage(this, 0, 0, 'textBG-cht', 'textBG-eng');
+            //itemTextBG.SetLocalization(this.language);
+            //const itemText = new LocalizedImage(this, 0, 0, 'A6-text' + (i+1) + '-cht', 'A6-text' + (i+1) + '-eng');
+            //itemText.SetLocalization(this.language);
+            const itemTextBG = this.add.image(0, 0, this.language === 0 ? 'textBG-cht' : 'textBG-eng');
+            const itemText = this.add.image(0, 0, this.language === 0 ? 'A6-text' + (i+1) + '-cht' : 'A6-text' + (i+1) + '-eng');
             itemBtn.add([item, itemTextBG, itemText]);
 
             itemBtn.setSize(320, 450);
@@ -1256,9 +1419,11 @@ export class GameA extends Scene
     {
         const ending = this.add.video(960, 540);//, 'gameA-end');
         ending.setScale(1.5);
-        const endingText = new LocalizedImage(this, 960, 540, 'gameA-end-cht', 'gameA-end-eng');
+        //const endingText = new LocalizedImage(this, 960, 540, 'gameA-end-cht', 'gameA-end-eng');
+        //endingText.setScale(1.5);
+        //endingText.SetLocalization(this.language);     
+        const endingText = this.add.image(960, 540, this.language === 0 ? 'gameA-end-cht' : 'gameA-end-eng');
         endingText.setScale(1.5);
-        endingText.SetLocalization(this.language);     
         endingText.alpha = 0;
 
         this.LoadUrlForVideo(ending, 'assets/video/A/GameAEnd.mp4');
@@ -1349,8 +1514,10 @@ export class GameA extends Scene
         for (let i = 0; i < 8; i++)
         {
             const icon = this.add.image(iconPosList[i].x, iconPosList[i].y, 'gameA-result-icon');
-            const text = new LocalizedImage(this, textPosList[i].x, textPosList[i].y, 'gameA-result-award' + (i+1) + '-cht', 'gameA-result-award' + (i+1) + '-eng');
-            text.SetLocalization(this.language);
+            //const text = new LocalizedImage(this, textPosList[i].x, textPosList[i].y, 'gameA-result-award' + (i+1) + '-cht', 'gameA-result-award' + (i+1) + '-eng');
+            //text.SetLocalization(this.language);
+            const text = this.add.image(textPosList[i].x, textPosList[i].y, this.language === 0 ? 'gameA-result-award' + (i+1) + '-cht' : 'gameA-result-award' + (i+1) + '-eng');
+
             let a = this.awards[i] ? 1 : 0.5;
             //icon.setAlpha(alpha);
             //text.setAlpha(alpha);
@@ -1367,6 +1534,7 @@ export class GameA extends Scene
             });
         }
 
+        /*
         if (awardCount < 3)
             var rank = new LocalizedImage(this, 950, 720, 'gameA-result-rank3-cht', 'gameA-result-rank3-eng');
         else if (awardCount < 7)
@@ -1374,7 +1542,15 @@ export class GameA extends Scene
         else
             rank = new LocalizedImage(this, 950, 720, 'gameA-result-rank1-cht', 'gameA-result-rank1-eng');
         rank.SetLocalization(this.language);
+        */
         
+        if (awardCount < 3)
+            var rank = this.add.image(950, 720, this.language === 0 ? 'gameA-result-rank3-cht' : 'gameA-result-rank3-eng');
+        else if (awardCount < 7)
+            rank = this.add.image(950, 720, this.language === 0 ? 'gameA-result-rank2-cht' : 'gameA-result-rank2-eng');
+        else
+            rank = this.add.image(950, 720, this.language === 0 ? 'gameA-result-rank1-cht' : 'gameA-result-rank1-eng');
+
         this.tweens.add({
             targets: [bg, rank],
             alpha: { from: 0, to: 1 },
@@ -1386,8 +1562,9 @@ export class GameA extends Scene
     {
         const button = this.add.container();
         const bg = this.add.image(0, 0, 'button');
-        const text = new LocalizedImage(this, 0, 0, 'confirm-cht', 'confirm-eng');
-        text.SetLocalization(this.language);
+        //const text = new LocalizedImage(this, 0, 0, 'confirm-cht', 'confirm-eng');
+        //text.SetLocalization(this.language);
+        const text = this.add.image(0, 0, this.language === 0 ? 'confirm-cht' : 'confirm-eng');
         button.add([bg, text]);
 
         button.setSize(bg.width, bg.height);
@@ -1421,6 +1598,11 @@ export class GameA extends Scene
     ReturnHome()
     {
         console.log('GameA: ReturnHome()');
+
+        var overlay = this.add.graphics();
+        overlay.fillStyle(0x000000, 0.8);
+        overlay.fillRect(0, 0, 1920, 1080);
+
         this.tweens.killAll();
         this.time.removeAllEvents();
         this.sound.stopAll();
