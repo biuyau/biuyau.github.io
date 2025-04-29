@@ -1,0 +1,124 @@
+{
+	"textures": [
+		{
+			"image": "intro_end",
+			"format": "RGBA8888",
+			"size": {
+				"w": 2560,
+				"h": 1540
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "gameB-end-cht",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 1280,
+						"h": 720
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 1280,
+						"h": 720
+					},
+					"frame": {
+						"x": 0,
+						"y": 0,
+						"w": 1280,
+						"h": 720
+					}
+				},
+				{
+					"filename": "gameB-end-eng",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 1280,
+						"h": 720
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 1280,
+						"h": 720
+					},
+					"frame": {
+						"x": 1280,
+						"y": 0,
+						"w": 1280,
+						"h": 720
+					}
+				},
+				{
+					"filename": "gameB-intro-cht",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 1280,
+						"h": 720
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 1280,
+						"h": 720
+					},
+					"frame": {
+						"x": 0,
+						"y": 720,
+						"w": 1280,
+						"h": 720
+					}
+				},
+				{
+					"filename": "gameB-intro-eng",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 1280,
+						"h": 720
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 1280,
+						"h": 720
+					},
+					"frame": {
+						"x": 1280,
+						"y": 720,
+						"w": 1280,
+						"h": 720
+					}
+				},
+				{
+					"filename": "gameB-arrow",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 323,
+						"h": 104
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 1,
+						"w": 319,
+						"h": 100
+					},
+					"frame": {
+						"x": 0,
+						"y": 1440,
+						"w": 319,
+						"h": 100
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "http://free-tex-packer.com",
+		"version": "0.6.7"
+	}
+}

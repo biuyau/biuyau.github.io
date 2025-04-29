@@ -1,0 +1,120 @@
+{
+	"textures": [
+		{
+			"image": "step5",
+			"format": "RGBA8888",
+			"size": {
+				"w": 1988,
+				"h": 1087
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "A5-bg",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 1280,
+						"h": 720
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 1280,
+						"h": 720
+					},
+					"frame": {
+						"x": 0,
+						"y": 0,
+						"w": 1280,
+						"h": 720
+					}
+				},
+				{
+					"filename": "A5-brush",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 708,
+						"h": 580
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 708,
+						"h": 580
+					},
+					"frame": {
+						"x": 1280,
+						"y": 0,
+						"w": 708,
+						"h": 580
+					}
+				},
+				{
+					"filename": "A5-revealmark",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 600,
+						"h": 600
+					},
+					"spriteSourceSize": {
+						"x": 83,
+						"y": 116,
+						"w": 432,
+						"h": 368
+					},
+					"frame": {
+						"x": 1280,
+						"y": 580,
+						"w": 432,
+						"h": 368
+					}
+				},
+				{
+					"filename": "A5-paper",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 600,
+						"h": 600
+					},
+					"spriteSourceSize": {
+						"x": 84,
+						"y": 116,
+						"w": 432,
+						"h": 367
+					},
+					"frame": {
+						"x": 0,
+						"y": 720,
+						"w": 432,
+						"h": 367
+					}
+				},
+				{
+					"filename": "A5-guideline",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 600,
+						"h": 600
+					},
+					"spriteSourceSize": {
+						"x": 115,
+						"y": 160,
+						"w": 362,
+						"h": 292
+					},
+					"frame": {
+						"x": 432,
+						"y": 720,
+						"w": 362,
+						"h": 292
+					}
+				}
+			]
+		}
+	]
+}

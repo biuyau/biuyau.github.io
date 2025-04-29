@@ -1,0 +1,288 @@
+{
+	"textures": [
+		{
+			"image": "step2",
+			"format": "RGBA8888",
+			"size": {
+				"w": 1837,
+				"h": 1398
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "A2-brush3",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 329,
+						"h": 1337
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 329,
+						"h": 1337
+					},
+					"frame": {
+						"x": 0,
+						"y": 0,
+						"w": 329,
+						"h": 1337
+					}
+				},
+				{
+					"filename": "A2-text2-cht",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 143,
+						"h": 43
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 143,
+						"h": 43
+					},
+					"frame": {
+						"x": 0,
+						"y": 1337,
+						"w": 143,
+						"h": 43
+					}
+				},
+				{
+					"filename": "A2-text1-cht",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 141,
+						"h": 43
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 0,
+						"w": 140,
+						"h": 43
+					},
+					"frame": {
+						"x": 143,
+						"y": 1337,
+						"w": 140,
+						"h": 43
+					}
+				},
+				{
+					"filename": "A2-text3-cht",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 138,
+						"h": 43
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 0,
+						"w": 137,
+						"h": 43
+					},
+					"frame": {
+						"x": 283,
+						"y": 1337,
+						"w": 137,
+						"h": 43
+					}
+				},
+				{
+					"filename": "A2-brush4",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 94,
+						"h": 1300
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 94,
+						"h": 1300
+					},
+					"frame": {
+						"x": 329,
+						"y": 0,
+						"w": 94,
+						"h": 1300
+					}
+				},
+				{
+					"filename": "A2-text2-eng",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 147,
+						"h": 31
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 147,
+						"h": 31
+					},
+					"frame": {
+						"x": 329,
+						"y": 1300,
+						"w": 147,
+						"h": 31
+					}
+				},
+				{
+					"filename": "A2-brush2",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 63,
+						"h": 1285
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 63,
+						"h": 1285
+					},
+					"frame": {
+						"x": 423,
+						"y": 0,
+						"w": 63,
+						"h": 1285
+					}
+				},
+				{
+					"filename": "A2-text4-cht",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 137,
+						"h": 43
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 137,
+						"h": 43
+					},
+					"frame": {
+						"x": 420,
+						"y": 1331,
+						"w": 137,
+						"h": 43
+					}
+				},
+				{
+					"filename": "A2-text1-eng",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 159,
+						"h": 24
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 159,
+						"h": 24
+					},
+					"frame": {
+						"x": 476,
+						"y": 1374,
+						"w": 159,
+						"h": 24
+					}
+				},
+				{
+					"filename": "A2-text4-eng",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 121,
+						"h": 24
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 121,
+						"h": 23
+					},
+					"frame": {
+						"x": 635,
+						"y": 1374,
+						"w": 121,
+						"h": 23
+					}
+				},
+				{
+					"filename": "A2-text3-eng",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 113,
+						"h": 24
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 113,
+						"h": 23
+					},
+					"frame": {
+						"x": 756,
+						"y": 1374,
+						"w": 113,
+						"h": 23
+					}
+				},
+				{
+					"filename": "A2-brush1",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 51,
+						"h": 1272
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 51,
+						"h": 1272
+					},
+					"frame": {
+						"x": 486,
+						"y": 0,
+						"w": 51,
+						"h": 1272
+					}
+				},
+				{
+					"filename": "A2-bg",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 1280,
+						"h": 720
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 1280,
+						"h": 720
+					},
+					"frame": {
+						"x": 557,
+						"y": 0,
+						"w": 1280,
+						"h": 720
+					}
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,288 @@
+{
+	"textures": [
+		{
+			"image": "step6",
+			"format": "RGBA8888",
+			"size": {
+				"w": 1849,
+				"h": 1493
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "A6-item3",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 900,
+						"h": 900
+					},
+					"spriteSourceSize": {
+						"x": 165,
+						"y": 24,
+						"w": 569,
+						"h": 851
+					},
+					"frame": {
+						"x": 0,
+						"y": 0,
+						"w": 569,
+						"h": 851
+					}
+				},
+				{
+					"filename": "A6-item2",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 900,
+						"h": 900
+					},
+					"spriteSourceSize": {
+						"x": 177,
+						"y": 190,
+						"w": 546,
+						"h": 519
+					},
+					"frame": {
+						"x": 0,
+						"y": 851,
+						"w": 546,
+						"h": 519
+					}
+				},
+				{
+					"filename": "A6-text4-eng",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 122,
+						"h": 31
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 121,
+						"h": 31
+					},
+					"frame": {
+						"x": 0,
+						"y": 1370,
+						"w": 121,
+						"h": 31
+					}
+				},
+				{
+					"filename": "A6-text3-cht",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 104,
+						"h": 31
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 104,
+						"h": 31
+					},
+					"frame": {
+						"x": 0,
+						"y": 1401,
+						"w": 104,
+						"h": 31
+					}
+				},
+				{
+					"filename": "A6-text4-cht",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 65,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 1,
+						"w": 65,
+						"h": 31
+					},
+					"frame": {
+						"x": 0,
+						"y": 1432,
+						"w": 65,
+						"h": 31
+					}
+				},
+				{
+					"filename": "A6-text1-eng",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 241,
+						"h": 30
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 241,
+						"h": 30
+					},
+					"frame": {
+						"x": 0,
+						"y": 1463,
+						"w": 241,
+						"h": 30
+					}
+				},
+				{
+					"filename": "A6-text2-eng",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 167,
+						"h": 30
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 167,
+						"h": 30
+					},
+					"frame": {
+						"x": 65,
+						"y": 1432,
+						"w": 167,
+						"h": 30
+					}
+				},
+				{
+					"filename": "A6-text1-cht",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 112,
+						"h": 29
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 112,
+						"h": 29
+					},
+					"frame": {
+						"x": 232,
+						"y": 1432,
+						"w": 112,
+						"h": 29
+					}
+				},
+				{
+					"filename": "A6-text3-eng",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 127,
+						"h": 28
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 127,
+						"h": 28
+					},
+					"frame": {
+						"x": 104,
+						"y": 1401,
+						"w": 127,
+						"h": 28
+					}
+				},
+				{
+					"filename": "A6-text2-cht",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 112,
+						"h": 27
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 112,
+						"h": 27
+					},
+					"frame": {
+						"x": 231,
+						"y": 1401,
+						"w": 112,
+						"h": 27
+					}
+				},
+				{
+					"filename": "A6-bg",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 1280,
+						"h": 720
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 1280,
+						"h": 720
+					},
+					"frame": {
+						"x": 569,
+						"y": 0,
+						"w": 1280,
+						"h": 720
+					}
+				},
+				{
+					"filename": "A6-item4",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 900,
+						"h": 900
+					},
+					"spriteSourceSize": {
+						"x": 306,
+						"y": 85,
+						"w": 288,
+						"h": 730
+					},
+					"frame": {
+						"x": 569,
+						"y": 720,
+						"w": 288,
+						"h": 730
+					}
+				},
+				{
+					"filename": "A6-item1",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 900,
+						"h": 900
+					},
+					"spriteSourceSize": {
+						"x": 77,
+						"y": 96,
+						"w": 745,
+						"h": 708
+					},
+					"frame": {
+						"x": 857,
+						"y": 720,
+						"w": 745,
+						"h": 708
+					}
+				}
+			]
+		}
+	]
+}

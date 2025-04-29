@@ -3,6 +3,9 @@ import * as Phaser from 'phaser';
 import { GameA } from './gameA.js';
 import { GameAUI } from './gameAUI.js';
 import { GameATutor } from './gameATutor.js';
+import { GameB } from './gameB.js';
+import { GameBUI } from './gameBUI.js';
+import { GameBTutor } from './gameBTutor.js';
 import { Main } from './game.js';
 
 
@@ -18,7 +21,7 @@ const config = {
     },
     backgroundColor: '#000000',
     parent: 'game-container',
-    scene: [ Main, GameA, GameAUI, GameATutor]
+    scene: [ Main, GameA, GameAUI, GameATutor, GameB, GameBUI, GameBTutor]
     //scene: [  GameA]
 };
 

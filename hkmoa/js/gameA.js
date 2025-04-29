@@ -42,7 +42,7 @@ export class GameA extends Scene
             y: 420,
             text: '\n載入中...\nLoading...\n',
             style: {
-                font: '30px Courier',
+                font: '30px Georgia',
                 fill: '#ffffff',
                 align: 'center',
                 lineSpacing: 20,
@@ -56,6 +56,16 @@ export class GameA extends Scene
         ////////////////////
         this.load.atlas('award', 'assets/image/award.png', 'assets/image/award.json');
         this.load.atlas('timesup', 'assets/image/timesup.png', 'assets/image/timesup.json');
+        this.load.atlas('A-progress', 'assets/image/A/progressBar/progress_ui.png', 'assets/image/A/progressBar/progress_ui.json');
+        this.load.atlas('A-step1', 'assets/image/A/step1/step1.png', 'assets/image/A/step1/step1.json');
+        this.load.atlas('A-step2', 'assets/image/A/step2/step2.png', 'assets/image/A/step2/step2.json');
+        this.load.atlas('A-step3', 'assets/image/A/step3/step3.png', 'assets/image/A/step3/step3.json');
+        this.load.atlas('A-step4', 'assets/image/A/step4/step4.png', 'assets/image/A/step4/step4.json');
+        this.load.atlas('A-step5', 'assets/image/A/step5/step5.png', 'assets/image/A/step5/step5.json');
+        this.load.atlas('A-step6', 'assets/image/A/step6/step6.png', 'assets/image/A/step6/step6.json');
+        this.load.atlas('A-tutor-cht', 'assets/image/A/tutor/tutor_cht.png', 'assets/image/A/tutor/tutor_cht.json');
+        this.load.atlas('A-tutor-eng', 'assets/image/A/tutor/tutor_eng.png', 'assets/image/A/tutor/tutor_eng.json');
+        this.load.atlas('A-result', 'assets/image/A/result/result.png', 'assets/image/A/result/result.json');
 
         // intro and videos
         //this.load.video('gameA', 'assets/video/GameA.mp4', true);
@@ -63,6 +73,7 @@ export class GameA extends Scene
         this.load.image('gameA-intro-eng', 'assets/image/A/intro/intro_en.png');
         this.load.image('gameA-arrow', 'assets/image/A/intro/Arrow.png');
 
+        /*
         // ui
         this.load.image('progress-bar-bg', 'assets/image/A/progressBar/progress_bar_bg.png');
         this.load.image('progress-bar-fill', 'assets/image/A/progressBar/progress_bar.png');
@@ -92,6 +103,7 @@ export class GameA extends Scene
             this.load.image('progress-text6-eng', 'assets/image/A/progressBar/Progress6_en.png');
         }
 
+        
         // step1
         this.load.image('A1-base', 'assets/image/A/step1/Step_1-BG.jpg');
         this.load.image('A1-bg', 'assets/image/A/step1/Step_1-Paint.png');
@@ -170,7 +182,7 @@ export class GameA extends Scene
             this.load.image('A6-text3-eng', 'assets/image/A/step6/item3_text_en.png');
             this.load.image('A6-text4-eng', 'assets/image/A/step6/item4_text_en.png');
         }
-
+*/
         // ending
         if (this.language === 0)
         {
@@ -181,6 +193,7 @@ export class GameA extends Scene
             this.load.image('gameA-end-eng', 'assets/image/A/end/G1-End-en.png');
         }
 
+        /*
         // result
         this.load.image('gameA-result-bg', 'assets/image/A/result/bg.png');
         this.load.image('gameA-result-icon', 'assets/image/A/result/icon.png');
@@ -193,7 +206,10 @@ export class GameA extends Scene
             this.load.image('gameA-result-award5-cht', 'assets/image/A/result/award5.png');
             this.load.image('gameA-result-award6-cht', 'assets/image/A/result/award6.png');
             this.load.image('gameA-result-award7-cht', 'assets/image/A/result/award7.png');
-            this.load.image('gameA-result-award8-cht', 'assets/image/A/result/award8.png');        
+            this.load.image('gameA-result-award8-cht', 'assets/image/A/result/award8.png');     
+            this.load.image('gameA-result-rank1-cht', 'assets/image/A/result/rank1.png');
+            this.load.image('gameA-result-rank2-cht', 'assets/image/A/result/rank2.png');
+            this.load.image('gameA-result-rank3-cht', 'assets/image/A/result/rank3.png');   
         }
         else
         {
@@ -205,9 +221,6 @@ export class GameA extends Scene
             this.load.image('gameA-result-award6-eng', 'assets/image/A/result/award6_en.png');
             this.load.image('gameA-result-award7-eng', 'assets/image/A/result/award7_en.png');
             this.load.image('gameA-result-award8-eng', 'assets/image/A/result/award8_en.png');
-            this.load.image('gameA-result-rank1-cht', 'assets/image/A/result/rank1.png');
-            this.load.image('gameA-result-rank2-cht', 'assets/image/A/result/rank2.png');
-            this.load.image('gameA-result-rank3-cht', 'assets/image/A/result/rank3.png');
             this.load.image('gameA-result-rank1-eng', 'assets/image/A/result/rank1_en.png');
             this.load.image('gameA-result-rank2-eng', 'assets/image/A/result/rank2_en.png');
             this.load.image('gameA-result-rank3-eng', 'assets/image/A/result/rank3_en.png');
@@ -275,6 +288,7 @@ export class GameA extends Scene
             this.load.image('tutor-a6-correct-eng', 'assets/image/A/tutor/eng/6c.png');
             this.load.image('tutor-a6-wrong-eng', 'assets/image/A/tutor/eng/6b.png');
         }
+        */
        
         this.load.on('progress', function (value) {
             //console.log(value);
@@ -305,7 +319,7 @@ export class GameA extends Scene
         this.log = this.add.text(960, 540, 
             'Debug message', 
             { 
-                font: '50px Courier', 
+                font: '50px Times New Roman', 
                 fill: '#ff0000', 
                 align: 'center',
             });
@@ -322,7 +336,7 @@ export class GameA extends Scene
         this.step5Group = this.add.group();
         this.step6Group = this.add.group();
                       
-        this.time.delayedCall(500, () => { 
+        this.time.delayedCall(3000, () => { 
             this.scene.stop('Main'); 
         });     
         //this.StartIntro();
@@ -392,7 +406,7 @@ export class GameA extends Scene
                     {                
                         targets: rect,        
                         width: arrow.width,
-                        duration: 2000,
+                        duration: 1500,
                         onUpdate: () => arrow.setCrop(rect)
                     },
                     {                
@@ -400,7 +414,7 @@ export class GameA extends Scene
                         alpha: { from: 1, to: 0 },
                         ease: 'Linear',
                         duration: 1000,
-                        delay: 4000
+                        delay: 4500
                     }
                 ]
             });
@@ -424,6 +438,7 @@ export class GameA extends Scene
 
         const step1ClothColors = [0x98A080, 0xA18764, 0xC2C5A1, 0xF9DFBC, 0xCFAD80, 0xE0D7C3];
 
+        /*
         const step1Base = this.add.image(960, 540, 'A1-base');
         step1Base.setScale(1.5);
         // fade in
@@ -432,10 +447,16 @@ export class GameA extends Scene
             alpha: {from: 0, to: 1},
             duration: 500
         });
+        */
 
-        const step1Color = this.add.rectangle(1280, 360, 400, 400);
-        step1Color.setFillStyle(0xffffff, 0);
-        const step1BG = this.add.image(960, 540, 'A1-bg');
+        const step1Color = this.add.rectangle(1260, 400, 400, 400);
+        step1Color.setFillStyle(0xaabdc4);
+        this.tweens.add({
+            targets: step1Color,
+            alpha: {from: 0, to: 1},
+            duration: 500
+        });
+        const step1BG = this.add.image(960, 540, 'A-step1', 'A1-bg');
         step1BG.setScale(1.5);
         this.step1ConfirmBtn = this.CreateConfirmButton();
         this.step1ConfirmBtn.setVisible(false);
@@ -448,7 +469,7 @@ export class GameA extends Scene
         this.step1Cloths = [];
         for (let i = 0; i < 6; i++)
         {
-            const cloth = this.add.image(posX + i * stepX, posY, 'A1-cloth' + (i+1));
+            const cloth = this.add.image(posX + i * stepX, posY, 'A-step1', 'A1-cloth' + (i+1));
             cloth.setDisplaySize(305, 331);
             cloth.setInteractive(this.input.makePixelPerfect(150));
             cloth.on('pointerdown', () => {
@@ -500,7 +521,7 @@ export class GameA extends Scene
             }
         });
 
-        this.step1Group.add(step1Base);
+        //this.step1Group.add(step1Base);
         this.step1Group.add(step1Color);
         this.step1Group.add(step1BG);
         this.step1Group.add(this.step1ConfirmBtn);
@@ -516,6 +537,7 @@ export class GameA extends Scene
                     {
                         this.events.emit('step-timesup');
                         this.events.emit('timesup', step1Color.x, step1Color.y);
+                        step1Color.setFillStyle(step1ClothColors[correctCloth]);
                         this.CompleteStep1(); 
                     }
                 },
@@ -580,7 +602,7 @@ export class GameA extends Scene
         var selectedBrush = -1;
         const correctBrush = 0;
 
-        const step2BG = this.add.image(960, 540, 'A2-bg');
+        const step2BG = this.add.image(960, 540, 'A-step2', 'A2-bg');
         step2BG.setScale(1.5);
         //const step2Water = this.add.image(960, 540, 'A2-water');
         this.step2ConfirmBtn = this.CreateConfirmButton();
@@ -595,14 +617,14 @@ export class GameA extends Scene
         for (let i = 0; i < 4; i++)
         {
             const brushBtn = this.add.container(posX + i * stepX, posY);
-            const brush = this.add.image(0, 0, 'A2-brush' + (i+1));
+            const brush = this.add.image(0, 0, 'A-step2', 'A2-brush' + (i+1));
             brush.setScale(850 / brush.height);
             //const brushTextBG = new LocalizedImage(this, 0, -180, 'textBG-cht', 'textBG-eng');
             //brushTextBG.SetLocalization(this.language);
             //const brushText = new LocalizedImage(this, 0, -180, 'A2-text' + (i+1) + '-cht', 'A2-text' + (i+1) + '-eng');
             //brushText.SetLocalization(this.language);
-            const brushTextBG = this.add.image(0, -180, this.language === 0 ? 'textBG-cht' : 'textBG-eng');
-            const brushText = this.add.image(0, -180, this.language === 0 ? 'A2-text' + (i+1) + '-cht' : 'A2-text' + (i+1) + '-eng');
+            const brushTextBG = this.add.image(0, -180, 'common', this.language === 0 ? 'textBG-cht' : 'textBG-eng');
+            const brushText = this.add.image(0, -180, 'A-step2', this.language === 0 ? 'A2-text' + (i+1) + '-cht' : 'A2-text' + (i+1) + '-eng');
             brushBtn.add([brush, brushTextBG, brushText]);
 
             brushBtn.setSize(Math.max(brush.displayWidth, 250), brush.displayHeight);
@@ -715,27 +737,28 @@ export class GameA extends Scene
         this.events.emit('step3-start');
         this.events.emit('step3-intro');
 
-        this.step3brush = this.add.image(960, 540, 'A3-brush');
+        this.step3brush = this.add.image(960, 540, 'A-step3', 'A3-brush');
         this.step3brush.setDisplaySize(628, 628);
         this.step3brush.setOrigin(0);
         this.step3brush.setDepth(1);
 
-        const progressUI = this.add.container(1320, 540);
+        this.step3ProgressUI  = this.add.container(1320, 540);
         const progressValue = this.add.text(-40, 20, '0', { 
-            font: '120px Courier', 
+            font: '800 120px Times New Roman', 
             fill: '#ffffff', 
             align: 'right'
         }).setOrigin(0.5, 1);
         const progressPercent = this.add.text(100, 0, '%', { 
-            font: '60px Courier', 
+            font: '800 60px Times New Roman', 
             fill: '#ffffff', 
             align: 'left'
         }).setOrigin(0.5, 1);
         //const progressText = new LocalizedImage(this, 0, 100, 'progress-cht', 'progress-eng');
         //progressText.SetLocalization(this.language);
-        const progressText = this.add.image(0, 100, this.language === 0 ? 'progress-cht' : 'progress-eng');
-        progressUI.add([progressValue, progressPercent, progressText]);
-        progressUI.alpha = 0;
+        const progressText = this.add.image(0, 100, 'common', this.language === 0 ? 'progress-cht' : 'progress-eng');
+        progressText.setTint(0x888888);
+        this.step3ProgressUI.add([progressValue, progressPercent, progressText]);
+        this.step3ProgressUI.alpha = 0;
 
         //const guideline = this.add.image(0, 0, 'A3-guideline');
         //const reveal = this.add.image(0, 0, 'A3-revealmark');
@@ -773,7 +796,7 @@ export class GameA extends Scene
             { x: -69, y: 54 },
             { x: -51, y: 67 } 
         ];
-        this.step3Reveal = new RevealImage(this, 1608, 472, 'A3-guideline', 'A3-revealmark', 'brush', 80, points, 40, (progress) => {
+        this.step3Reveal = new RevealImage(this, 1608, 472, 'A-step3', 'A3-guideline', 'A3-revealmark', 80, points, 40, (progress) => {
             //console.log(progress);
             progressValue.text = Math.round(progress * 100);
             if (progress >= 0.999)
@@ -811,7 +834,7 @@ export class GameA extends Scene
                     this.step3Reveal.Start();
 
                     this.tweens.add({
-                        targets: progressUI,
+                        targets: this.step3ProgressUI,
                         alpha: 1,
                         duration: 500
                     });
@@ -820,7 +843,7 @@ export class GameA extends Scene
         });
         
         this.step2_3Group.add(this.step3brush);
-        this.step2_3Group.add(progressUI);
+        this.step2_3Group.add(this.step3ProgressUI);
         this.step2_3Group.add(this.step3Reveal);
         this.step2_3Group.add(this.step3Arrow);
         
@@ -857,6 +880,7 @@ export class GameA extends Scene
         // remove interactives
         this.step3Arrow.setVisible(false);
         this.step3brush.setVisible(false);
+        this.step3ProgressUI.setVisible(false);
         this.input.off('pointermove');
 
         // auto complete the reveal image
@@ -889,7 +913,7 @@ export class GameA extends Scene
         this.events.emit('step4-start');
         this.events.emit('step4-intro');
         
-        const step4BG = this.add.image(960, 540, 'A4-bg');
+        const step4BG = this.add.image(960, 540, 'A-step4', 'A4-bg');
         step4BG.setScale(1.5);
 
         var posList = [
@@ -922,7 +946,7 @@ export class GameA extends Scene
         for (let i = 0; i < 10; i++)
         {
             const paper = this.add.container(posList[i].x, posList[i].y);
-            const paperImg = this.add.image(0, 0, 'A4-paper' + (i+1));
+            const paperImg = this.add.image(0, 0, 'A-step4', 'A4-paper' + (i+1));
             const arrow = this.CreateArrow(arrowData[i].x, arrowData[i].y, arrowData[i].angle, 0.6);
             paper.add([paperImg, arrow]);
             paperImg.setInteractive(this.input.makePixelPerfect(50));
@@ -955,7 +979,7 @@ export class GameA extends Scene
         }
         this.step4Papers = papers;
 
-        const center = this.add.image(960, 540, 'A4-center');
+        const center = this.add.image(960, 540, 'A-step4', 'A4-center');
 
         this.tweens.add({
             targets: center,
@@ -1006,7 +1030,7 @@ export class GameA extends Scene
             this.events.emit('step4-correct2');
 
             const arrow = this.CreateArrow(1200, 540, -90);
-            const overlay = this.add.image(960, 540, 'A4-bg');
+            const overlay = this.add.image(960, 540, 'A-step4', 'A4-bg');
             overlay.alpha = 0.01;
             overlay.setInteractive();
             this.input.setDraggable(overlay);
@@ -1037,29 +1061,31 @@ export class GameA extends Scene
         this.events.emit('step5-start');
         this.events.emit('step5-intro');
 
-        const step5BG = this.add.image(960, 540, 'A5-bg');
+        const step5BG = this.add.image(960, 540, 'A-step5', 'A5-bg');
         step5BG.setScale(1.5);
-        const paper = this.add.image(1263, 566, 'A5-paper');
+        const paper = this.add.image(1263, 566, 'A-step5', 'A5-paper');
 
-        this.step5brush = this.add.image(960, 540, 'A5-brush');
+        this.step5brush = this.add.image(960, 540, 'A-step5', 'A5-brush');
         this.step5brush.setOrigin(0.04, 0.05);
         this.step5brush.setDepth(1);
 
-        const progressUI = this.add.container(890, 500);
+        this.step5ProgressUI = this.add.container(890, 500);
         const progressValue = this.add.text(-40, 20, '0', { 
-            font: '120px Courier', 
+            font: '800 120px Times New Roman', 
             fill: '#ffffff', 
             align: 'right'
         }).setOrigin(0.5, 1);
         const progressPercent = this.add.text(100, 0, '%', { 
-            font: '60px Courier', 
+            font: '800 60px Times New Roman', 
             fill: '#ffffff', 
             align: 'left'
         }).setOrigin(0.5, 1);
-        const progressText = new LocalizedImage(this, 0, 100, 'progress-cht', 'progress-eng');
-        progressText.SetLocalization(this.language);
-        progressUI.add([progressValue, progressPercent, progressText]);
-        progressUI.alpha = 0;
+        //const progressText = new LocalizedImage(this, 0, 100, 'progress-cht', 'progress-eng');
+        //progressText.SetLocalization(this.language);
+        const progressText = this.add.image(0, 100, 'common', this.language === 0 ? 'progress-cht' : 'progress-eng');
+        progressText.setTint(0x888888);
+        this.step5ProgressUI.add([progressValue, progressPercent, progressText]);
+        this.step5ProgressUI.alpha = 0;
 
         //const guideline = this.add.image(0, 0, 'A3-guideline');
         //const reveal = this.add.image(0, 0, 'A3-revealmark');
@@ -1096,7 +1122,7 @@ export class GameA extends Scene
             { x: 84, y: 81 },
             { x: 59, y: 92 }
         ];
-        this.step5Reveal = new RevealImage(this, 1263, 566, 'A5-guideline', 'A5-revealmark', 'brush', 90, points, 40, (progress) => {
+        this.step5Reveal = new RevealImage(this, 1263, 566, 'A-step5', 'A5-guideline', 'A5-revealmark', 90, points, 40, (progress) => {
             //console.log(progress);
             progressValue.text = Math.round(progress * 100);
             if (progress >= 0.999)
@@ -1134,7 +1160,7 @@ export class GameA extends Scene
                     this.step5Reveal.Start();
 
                     this.tweens.add({
-                        targets: progressUI,
+                        targets: this.step5ProgressUI,
                         alpha: 1,
                         duration: 500
                     });
@@ -1145,7 +1171,7 @@ export class GameA extends Scene
         this.step5Group.add(step5BG);
         this.step5Group.add(paper);
         this.step5Group.add(this.step5brush);
-        this.step5Group.add(progressUI);
+        this.step5Group.add(this.step5ProgressUI);
         this.step5Group.add(this.step5Reveal);
         this.step5Group.add(this.step5Arrow);
         
@@ -1182,6 +1208,7 @@ export class GameA extends Scene
         // remove interactives
         this.step5Arrow.setVisible(false);
         this.step5brush.setVisible(false);
+        this.step5ProgressUI.setVisible(false);
         this.input.off('pointermove');
 
         // auto complete the reveal image
@@ -1221,7 +1248,7 @@ export class GameA extends Scene
         this.step6NextItem = 0;
         var selectedItem = -1;
 
-        const step6BG = this.add.image(960, 540, 'A6-bg');
+        const step6BG = this.add.image(960, 540, 'A-step6', 'A6-bg');
         step6BG.setScale(1.5);
         this.step6ConfirmBtn = this.CreateConfirmButton();
         this.step6ConfirmBtn.setVisible(false);
@@ -1236,15 +1263,15 @@ export class GameA extends Scene
         for (let i = 0; i < 4; i++)
         {
             const itemBtn = this.add.container(posX + i * stepX, posY);
-            const item = this.add.image(0, 0, 'A6-item' + (i+1));
+            const item = this.add.image(0, 0, 'A-step6', 'A6-item' + (i+1));
             item.setDisplaySize(360, 360);
             item.setAngle(30);
             //const itemTextBG = new LocalizedImage(this, 0, 0, 'textBG-cht', 'textBG-eng');
             //itemTextBG.SetLocalization(this.language);
             //const itemText = new LocalizedImage(this, 0, 0, 'A6-text' + (i+1) + '-cht', 'A6-text' + (i+1) + '-eng');
             //itemText.SetLocalization(this.language);
-            const itemTextBG = this.add.image(0, 0, this.language === 0 ? 'textBG-cht' : 'textBG-eng');
-            const itemText = this.add.image(0, 0, this.language === 0 ? 'A6-text' + (i+1) + '-cht' : 'A6-text' + (i+1) + '-eng');
+            const itemTextBG = this.add.image(0, 0, 'common', this.language === 0 ? 'textBG-cht' : 'textBG-eng');
+            const itemText = this.add.image(0, 0, 'A-step6', this.language === 0 ? 'A6-text' + (i+1) + '-cht' : 'A6-text' + (i+1) + '-eng');
             itemBtn.add([item, itemTextBG, itemText]);
 
             itemBtn.setSize(320, 450);
@@ -1486,7 +1513,7 @@ export class GameA extends Scene
     {
         this.events.emit('flash-homebutton');
 
-        const bg = this.add.image(960, 540, 'gameA-result-bg');
+        const bg = this.add.image(960, 540, 'A-result', 'gameA-result-bg');
         bg.setScale(1.5);
 
         var iconPosList = [
@@ -1501,22 +1528,22 @@ export class GameA extends Scene
         ];
         var textPosList = [
             {x: 950, y: 60},
-            {x: 1400, y: 280},
-            {x: 1510, y: 540},
-            {x: 1400, y: 800},
+            {x: 1450, y: 280},
+            {x: 1520, y: 540},
+            {x: 1450, y: 800},
             {x: 950, y: 1020},
-            {x: 500, y: 800},
-            {x: 390, y: 540},
-            {x: 500, y: 280}
+            {x: 450, y: 800},
+            {x: 340, y: 540},
+            {x: 450, y: 280}
         ];
 
         var awardCount = 0;
         for (let i = 0; i < 8; i++)
         {
-            const icon = this.add.image(iconPosList[i].x, iconPosList[i].y, 'gameA-result-icon');
+            const icon = this.add.image(iconPosList[i].x, iconPosList[i].y, 'A-result', 'gameA-result-icon');
             //const text = new LocalizedImage(this, textPosList[i].x, textPosList[i].y, 'gameA-result-award' + (i+1) + '-cht', 'gameA-result-award' + (i+1) + '-eng');
             //text.SetLocalization(this.language);
-            const text = this.add.image(textPosList[i].x, textPosList[i].y, this.language === 0 ? 'gameA-result-award' + (i+1) + '-cht' : 'gameA-result-award' + (i+1) + '-eng');
+            const text = this.add.image(textPosList[i].x, textPosList[i].y, 'A-result', this.language === 0 ? 'gameA-result-award' + (i+1) + '-cht' : 'gameA-result-award' + (i+1) + '-eng');
 
             let a = this.awards[i] ? 1 : 0.5;
             //icon.setAlpha(alpha);
@@ -1545,11 +1572,11 @@ export class GameA extends Scene
         */
         
         if (awardCount < 3)
-            var rank = this.add.image(950, 720, this.language === 0 ? 'gameA-result-rank3-cht' : 'gameA-result-rank3-eng');
+            var rank = this.add.image(950, 720, 'A-result', this.language === 0 ? 'gameA-result-rank3-cht' : 'gameA-result-rank3-eng');
         else if (awardCount < 7)
-            rank = this.add.image(950, 720, this.language === 0 ? 'gameA-result-rank2-cht' : 'gameA-result-rank2-eng');
+            rank = this.add.image(950, 720, 'A-result', this.language === 0 ? 'gameA-result-rank2-cht' : 'gameA-result-rank2-eng');
         else
-            rank = this.add.image(950, 720, this.language === 0 ? 'gameA-result-rank1-cht' : 'gameA-result-rank1-eng');
+            rank = this.add.image(950, 720, 'A-result', this.language === 0 ? 'gameA-result-rank1-cht' : 'gameA-result-rank1-eng');
 
         this.tweens.add({
             targets: [bg, rank],
@@ -1561,10 +1588,10 @@ export class GameA extends Scene
     CreateConfirmButton()
     {
         const button = this.add.container();
-        const bg = this.add.image(0, 0, 'button');
+        const bg = this.add.image(0, 0, 'common', 'button');
         //const text = new LocalizedImage(this, 0, 0, 'confirm-cht', 'confirm-eng');
         //text.SetLocalization(this.language);
-        const text = this.add.image(0, 0, this.language === 0 ? 'confirm-cht' : 'confirm-eng');
+        const text = this.add.image(0, 0, 'common', this.language === 0 ? 'confirm-cht' : 'confirm-eng');
         button.add([bg, text]);
 
         button.setSize(bg.width, bg.height);
@@ -1577,7 +1604,7 @@ export class GameA extends Scene
     CreateArrow(x, y, angle, size = 1)
     {
         const container = this.add.container(x, y);
-        const arrow = this.add.image(0, 0, 'arrow');
+        const arrow = this.add.image(0, 0, 'common', 'arrow');
         arrow.angle = angle;
         let rect = this.add.rectangle(0, 0, 0, arrow.height);
         arrow.setCrop(rect);

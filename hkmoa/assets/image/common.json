@@ -1,0 +1,372 @@
+{
+	"textures": [
+		{
+			"image": "common",
+			"format": "RGBA8888",
+			"size": {
+				"w": 2043,
+				"h": 1412
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "engMenu",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 447,
+						"y": 132,
+						"w": 1373,
+						"h": 706
+					},
+					"frame": {
+						"x": 0,
+						"y": 0,
+						"w": 1373,
+						"h": 706
+					}
+				},
+				{
+					"filename": "coverText",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 500,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 500,
+						"h": 120
+					},
+					"frame": {
+						"x": 1373,
+						"y": 0,
+						"w": 500,
+						"h": 120
+					}
+				},
+				{
+					"filename": "confirm-eng",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 136,
+						"h": 46
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 136,
+						"h": 46
+					},
+					"frame": {
+						"x": 1873,
+						"y": 0,
+						"w": 136,
+						"h": 46
+					}
+				},
+				{
+					"filename": "chtBtn",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 79,
+						"h": 79
+					},
+					"spriteSourceSize": {
+						"x": 22,
+						"y": 19,
+						"w": 34,
+						"h": 42
+					},
+					"frame": {
+						"x": 2009,
+						"y": 0,
+						"w": 34,
+						"h": 42
+					}
+				},
+				{
+					"filename": "confirm-cht",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 114,
+						"h": 41
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 114,
+						"h": 41
+					},
+					"frame": {
+						"x": 1873,
+						"y": 46,
+						"w": 114,
+						"h": 41
+					}
+				},
+				{
+					"filename": "engBtn",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 80,
+						"h": 80
+					},
+					"spriteSourceSize": {
+						"x": 13,
+						"y": 24,
+						"w": 55,
+						"h": 32
+					},
+					"frame": {
+						"x": 1987,
+						"y": 46,
+						"w": 55,
+						"h": 32
+					}
+				},
+				{
+					"filename": "chtBtnOn",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 80,
+						"h": 80
+					},
+					"spriteSourceSize": {
+						"x": 18,
+						"y": 15,
+						"w": 43,
+						"h": 51
+					},
+					"frame": {
+						"x": 1987,
+						"y": 78,
+						"w": 43,
+						"h": 51
+					}
+				},
+				{
+					"filename": "progress-eng",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 109,
+						"h": 43
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 9,
+						"w": 105,
+						"h": 27
+					},
+					"frame": {
+						"x": 1873,
+						"y": 87,
+						"w": 105,
+						"h": 27
+					}
+				},
+				{
+					"filename": "homeBtn",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 120,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 24,
+						"y": 27,
+						"w": 71,
+						"h": 68
+					},
+					"frame": {
+						"x": 1873,
+						"y": 114,
+						"w": 71,
+						"h": 68
+					}
+				},
+				{
+					"filename": "engBtnOn",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 79,
+						"h": 79
+					},
+					"spriteSourceSize": {
+						"x": 9,
+						"y": 20,
+						"w": 62,
+						"h": 39
+					},
+					"frame": {
+						"x": 1944,
+						"y": 129,
+						"w": 62,
+						"h": 39
+					}
+				},
+				{
+					"filename": "arrow",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 283,
+						"h": 105
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 2,
+						"w": 281,
+						"h": 102
+					},
+					"frame": {
+						"x": 1373,
+						"y": 120,
+						"w": 281,
+						"h": 102
+					}
+				},
+				{
+					"filename": "textBG-cht",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 213,
+						"h": 39
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 213,
+						"h": 39
+					},
+					"frame": {
+						"x": 1654,
+						"y": 120,
+						"w": 213,
+						"h": 39
+					}
+				},
+				{
+					"filename": "button",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 239,
+						"h": 86
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 0,
+						"w": 212,
+						"h": 86
+					},
+					"frame": {
+						"x": 1654,
+						"y": 159,
+						"w": 212,
+						"h": 86
+					}
+				},
+				{
+					"filename": "textBG-eng",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 275,
+						"h": 39
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 275,
+						"h": 39
+					},
+					"frame": {
+						"x": 1373,
+						"y": 222,
+						"w": 275,
+						"h": 39
+					}
+				},
+				{
+					"filename": "progress-cht",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 268,
+						"h": 33
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 0,
+						"w": 267,
+						"h": 33
+					},
+					"frame": {
+						"x": 1648,
+						"y": 245,
+						"w": 267,
+						"h": 33
+					}
+				},
+				{
+					"filename": "brush",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 256,
+						"h": 256
+					},
+					"spriteSourceSize": {
+						"x": 10,
+						"y": 10,
+						"w": 236,
+						"h": 236
+					},
+					"frame": {
+						"x": 1373,
+						"y": 261,
+						"w": 236,
+						"h": 236
+					}
+				},
+				{
+					"filename": "chtMenu",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 388,
+						"y": 116,
+						"w": 1331,
+						"h": 706
+					},
+					"frame": {
+						"x": 0,
+						"y": 706,
+						"w": 1331,
+						"h": 706
+					}
+				}
+			]
+		}
+	]
+}

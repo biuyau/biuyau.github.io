@@ -94,15 +94,16 @@ export class GameATutor extends Scene
         this.gameEvents.on('step-end', () => { this.HideTutor(); });
         for (let i = 1; i <= 6; i++)
         {
-            this.gameEvents.on('step' + i + '-intro', ()=>{ this.ShowTutor(i, 'intro'); });
-            this.gameEvents.on('step' + i + '-intro2', ()=>{ this.ShowTutor(i, 'intro2'); });
-            this.gameEvents.on('step' + i + '-correct', ()=>{ this.ShowTutor(i, 'correct'); });
-            this.gameEvents.on('step' + i + '-correct2', ()=>{ this.ShowTutor(i, 'correct2'); });
-            this.gameEvents.on('step' + i + '-wrong', ()=>{ this.ShowTutor(i, 'wrong'); });
-            this.gameEvents.on('step' + i + '-wrong2', ()=>{ this.ShowTutor(i, 'wrong2'); });
+            this.gameEvents.on('step' + i + '-intro', ()=>{ this.ShowTutor(i, 'a'); });
+            this.gameEvents.on('step' + i + '-intro2', ()=>{ this.ShowTutor(i, 'a-2'); });
+            this.gameEvents.on('step' + i + '-correct', ()=>{ this.ShowTutor(i, 'c'); });
+            this.gameEvents.on('step' + i + '-correct2', ()=>{ this.ShowTutor(i, 'c-2'); });
+            this.gameEvents.on('step' + i + '-wrong', ()=>{ this.ShowTutor(i, 'b'); });
+            this.gameEvents.on('step' + i + '-wrong2', ()=>{ this.ShowTutor(i, 'b-2'); });
         }
         
-        this.tutor = this.add.image(500, 580, 'tutor-timesup-cht');
+        this.tutor = this.add.image(500, 580);
+        this.tutor.setScale(1.25);
         this.tutor.alpha = 0;
         this.isShown = false;
     }
@@ -110,13 +111,17 @@ export class GameATutor extends Scene
     ShowTutor(index, action)
     { 
         // check if key exists
-        let key = 'tutor-a' + index + '-' + action;
-        key += (this.language === 0) ? '-cht' : '-eng';
+        //let key = 'tutor-a' + index + '-' + action;
+        //key += (this.language === 0) ? '-cht' : '-eng';
+        let key = index + action;
         console.log('ShowTutor:' + key);
-        if (!this.textures.exists(key))
+        let img = (this.language === 0) ? 'A-tutor-cht' : 'A-tutor-eng';
+        //if (!this.textures.exists(key))
+        //    return;
+        if (!this.textures.getFrame(img, key))
             return;
 
-        this.tutor.setTexture(key);
+        this.tutor.setTexture(img, key);
         if (!this.isShown)
         {
             this.isShown = true;
@@ -130,12 +135,16 @@ export class GameATutor extends Scene
 
     ShowTimesUp()
     {
-        let key = 'tutor-timesup';
-        key += (this.language === 0) ? '-cht' : '-eng';
-        if (!this.textures.exists(key))
+        //let key = 'tutor-timesup';
+        //key += (this.language === 0) ? '-cht' : '-eng';
+        let key = 'timesup';
+        let img = (this.language === 0) ? 'A-tutor-cht' : 'A-tutor-eng';
+        //if (!this.textures.exists(key))
+        //    return;
+        if (!this.textures.getFrame(img, key))
             return;
 
-        this.tutor.setTexture(key);
+        this.tutor.setTexture(img, key);
     }
 
     HideTutor()

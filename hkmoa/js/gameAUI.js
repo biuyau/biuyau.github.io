@@ -77,8 +77,8 @@ export class GameAUI extends Scene
         // progress bar
         var posY = 140;
         this.progressBar = this.add.container(960, posY);
-        this.progressBarBG = this.add.image(0, 0, 'progress-bar-bg');
-        this.progressBarFill = this.add.image(0, 0, 'progress-bar-fill');
+        this.progressBarBG = this.add.image(0, 0, 'A-progress', 'progress-bar-bg');
+        this.progressBarFill = this.add.image(0, 0, 'A-progress', 'progress-bar-fill');
         const fillRect = this.add.rectangle(0, 0, 0, this.progressBarFill.height);
         this.progressBarFill.setCrop(fillRect);
         this.progressBar.add(this.progressBarBG);
@@ -92,11 +92,11 @@ export class GameAUI extends Scene
         for (let i = 0; i < 6; i++)
         {
             // create images
-            const node = this.add.image(posX + i * stepX, 0, 'progress-bar-step');
-            const complete = this.add.image(posX + i * stepX, 0, 'progress-bar-step-complete');
+            const node = this.add.image(posX + i * stepX, 0, 'A-progress', 'progress-bar-step');
+            const complete = this.add.image(posX + i * stepX, 0, 'A-progress', 'progress-bar-step-complete');
             //const text = new LocalizedImage(this, posX + i * stepX, 100, 'progress-text' + (i+1) +'-cht', 'progress-text' + (i+1) + '-eng');
             //text.SetLocalization(this.language);
-            const text = this.add.image(posX + i * stepX, 100, this.language === 0 ? 'progress-text' + (i+1) +'-cht' : 'progress-text' + (i+1) + '-eng');
+            const text = this.add.image(posX + i * stepX, 100, 'A-progress', this.language === 0 ? 'progress-text' + (i+1) +'-cht' : 'progress-text' + (i+1) + '-eng');
             // add to container
             this.progressBar.add(node);
             this.progressBar.add(complete);
@@ -110,20 +110,20 @@ export class GameAUI extends Scene
         this.currentStep = this.add.container();
         //this.currentStepEffect = this.add.sprite(0, 0, 'particle');
         //this.currentStepEffect.setDisplaySize(300, 300);
-        const currentStepBG = this.add.image(0, 0, 'progress-bar-step-current');
-        const currentStepFrame = this.add.image(0, 0, 'progress-bar-step-current-frame');
-        this.currentStepFill = this.add.image(0, 0, 'progress-bar-step-current-fill');
+        const currentStepBG = this.add.image(0, 0, 'A-progress', 'progress-bar-step-current');
+        const currentStepFrame = this.add.image(0, 0, 'A-progress', 'progress-bar-step-current-frame');
+        this.currentStepFill = this.add.image(0, 0, 'A-progress', 'progress-bar-step-current-fill');
         this.currentStepFillRect = this.add.rectangle(0, 0, 120, 120);
         this.currentStepFill.setCrop(this.currentStepFillRect);
         this.currentStepTimer = this.add.text(0, 0, '30', { 
-            font: '48px Courier', 
+            font: '800 54px Times New Roman', 
             fill: '#ffffff', 
             align: 'center'
         }).setOrigin(0.5);
         this.currentStep.add([currentStepBG, currentStepFrame, this.currentStepFill, this.currentStepTimer]);
         this.progressBar.add(this.currentStep);        
 
-        let homeButton = this.add.image(149, 138, 'homeBtn');
+        let homeButton = this.add.image(149, 138, 'common', 'homeBtn');
         homeButton.setInteractive();
         homeButton.on('pointerdown', () => {
 

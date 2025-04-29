@@ -1,0 +1,78 @@
+{
+	"textures": [
+		{
+			"image": "step3",
+			"format": "RGBA8888",
+			"size": {
+				"w": 1084,
+				"h": 1329
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "A3-brush",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 1084,
+						"h": 1085
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 1084,
+						"h": 1085
+					},
+					"frame": {
+						"x": 0,
+						"y": 0,
+						"w": 1084,
+						"h": 1085
+					}
+				},
+				{
+					"filename": "A3-revealmark",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 286,
+						"h": 286
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 21,
+						"w": 286,
+						"h": 244
+					},
+					"frame": {
+						"x": 0,
+						"y": 1085,
+						"w": 286,
+						"h": 244
+					}
+				},
+				{
+					"filename": "A3-guideline",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 222,
+						"h": 188
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 222,
+						"h": 188
+					},
+					"frame": {
+						"x": 286,
+						"y": 1085,
+						"w": 222,
+						"h": 188
+					}
+				}
+			]
+		}
+	]
+}

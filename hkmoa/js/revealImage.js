@@ -2,7 +2,7 @@ import * as Phaser  from 'phaser';
 
 export class RevealImage extends Phaser.GameObjects.GameObject 
 {
-    constructor(scene, x, y, guideKey, revealKey, brushKey, brushSize, points, threshold, onChange) 
+    constructor(scene, x, y, imgKey, guideKey, revealKey, brushSize, points, threshold, onChange) 
     {
         super(scene);
 
@@ -10,75 +10,74 @@ export class RevealImage extends Phaser.GameObjects.GameObject
         this.x = x;
         this.y = y;
         //this.setPosition(x, y);
+        this.refPoints = points;
+        this.threshold = threshold;
+        this.onProgressChanged = onChange;
 
         // guideline underlaid
-		this.guideline = this.scene.add.image(x, y, guideKey);
+		this.guideline = this.scene.add.image(x, y, imgKey,guideKey);
         // image to be revealed
-		this.reveal = this.scene.add.image(x, y, revealKey);
+		this.reveal = this.scene.add.image(x, y, imgKey,revealKey);
         // full revealed image
-        this.complete = this.scene.add.image(x, y, revealKey);
-        this.complete.setVisible(false);
+        this.complete = this.scene.add.image(x, y, imgKey,revealKey);
         this.complete.alpha = 0;
         //this.add([guideline, reveal, this.complete]);
         this.scene.add.existing(this);
 
-        const width = this.reveal.width;
-        const height = this.reveal.height;
-        //this.setSize(width, height);
+        this.width = this.reveal.width;
+        this.height = this.reveal.height;
 
-		const renderTexture = this.scene.make.renderTexture({x: x, y: y, width: width, height: height, add: false});
-
-        /*
-		const maskImage = this.scene.make.image({
-			x: x,
-			y: y,
-			key: renderTexture.texture.key,
-			add: true
-		});        
-        */
-		const brush = this.scene.make.image({
-			key: brushKey,
+		this.brush = this.scene.make.image({
+			key: 'common',
+            frame: 'brush',
 			add: false
 		});
-        brush.setScale(brushSize / brush.width);
+        this.brush.setScale(brushSize / this.brush.width);
 
-		this.reveal.mask = new Phaser.Display.Masks.BitmapMask(this.scene, renderTexture);
-        //reveal.mask = renderTexture.createBitmapMask();
-        //reveal.mask.invertAlpha = true;
+		this.renderTexture = this.scene.make.renderTexture({x: x, y: y, width: this.width, height: this.height, add: false});
+		this.reveal.mask = new Phaser.Display.Masks.BitmapMask(this.scene, this.renderTexture);
 
+        this.Reset();
+	}
+
+    Reset()
+    {
+        this.guideline.alpha = 0;
+        this.reveal.alpha = 0;
+        this.complete.alpha = 0;
         this.progress = 0;
-        var hit = 0;
-        var total = points.length;
+        this.renderTexture.clear();
 
-		//this.reveal.setInteractive();
+        var hit = 0;
+        var total = this.refPoints.length;
+        var points = Array.from(this.refPoints);
+
+        this.reveal.off('pointermove');
 		this.reveal.on('pointermove', (pointer) => {
             
             if (pointer.isDown)
             {
                 //console.log(pointer.x + ', ' + pointer.y);
-                const _x = pointer.x - x;
-                const _y = pointer.y - y;
-                renderTexture.draw(brush, _x + width * 0.5, _y + height * 0.5);
-                
+                const _x = pointer.x - this.x;
+                const _y = pointer.y - this.y;
+                this.renderTexture.draw(this.brush, _x + this.width * 0.5, _y + this.height * 0.5);                
                 //console.log(_x + ', ' + _y);
+
                 // check and update progress
                 for (let i = points.length - 1; i >= 0; i--)
                 {
-                    if (Phaser.Math.Distance.Between(points[i].x, points[i].y, _x, _y) < threshold)
+                    if (Phaser.Math.Distance.Between(points[i].x, points[i].y, _x, _y) < this.threshold)
                     {
                         hit++;
                         this.progress = hit / total;
-                        onChange(this.progress);
+                        this.onProgressChanged(this.progress);
                         points.splice(i, 1);
                     }
                 }
             }
         });
 
-        //this.setVisible(false);
-        this.guideline.alpha = 0;
-        this.reveal.alpha = 0;
-	}
+    }
 
     Start()
     {
@@ -86,13 +85,15 @@ export class RevealImage extends Phaser.GameObjects.GameObject
         //this.setVisible(true);
         this.scene.tweens.add({
             targets: [ this.guideline, this.reveal],
-            alpha: 1,
+            alpha: {from: 0, to: 1},
             duration: 500
         });
     }
 
     Complete()
     {
+        this.guideline.alpha = 0;
+        this.reveal.off('pointermove');
         //this.setVisible(true);
         //this.alpha = 1;
         this.scene.tweens.add({
@@ -101,7 +102,6 @@ export class RevealImage extends Phaser.GameObjects.GameObject
             duration:1000
         });
 
-        this.complete.setVisible(true);
         this.complete.alpha = 0;
         this.scene.tweens.add({
             targets: this.complete,
@@ -117,5 +117,7 @@ export class RevealImage extends Phaser.GameObjects.GameObject
         this.guideline.destroy();
         this.reveal.destroy();
         this.complete.destroy();
+        this.renderTexture.destroy();
+
     }
 }

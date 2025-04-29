@@ -10,26 +10,16 @@ export class Main extends Scene
 
     preload ()
     {
-        this.load.image('coverBG', 'assets/image/Cover/cover.png');
+        this.load.image('coverBG', 'assets/image/Cover/cover.png');    
+    }
 
-        
+    // load after landing cover is loaded and displayed
+    postLoad()
+    {
         var progressBox = this.add.graphics();
-        progressBox.fillStyle(0x222222, 1);
-        progressBox.fillRect(500, 500, 920, 80);
+        progressBox.fillStyle(0x222222, 0.7);
+        progressBox.fillRect(500, 950, 920, 40);
         var progressBar = this.add.graphics();
-        var loadingText = this.make.text({
-            x: 960,
-            y: 420,
-            text: '\n載入中...\nLoading...\n',
-            style: {
-                font: '30px Courier',
-                fill: '#ffffff',
-                align: 'center',
-                lineSpacing: 20,
-                wordWrap: { width: 1200, useAdvancedWrap: true }
-            }
-        });
-        loadingText.setOrigin(0.5, 0.5);
         
         ////////////////////
         // main
@@ -49,7 +39,9 @@ export class Main extends Scene
         //this.load.atlas('particle', 'assets/image/particle.png', 'assets/image/particle.json');
         //this.load.atlas('award', 'assets/image/award.png', 'assets/image/award.json');
         //this.load.atlas('timesup', 'assets/image/timesup.png', 'assets/image/timesup.json');
+        this.load.atlas('common', 'assets/image/common.png', 'assets/image/common.json');
 
+        /*
         // images
         this.load.image('coverText', 'assets/image/Cover/Cover-text.png');
         this.load.image('chtBtn', 'assets/image/Cover/CN-Disable.png');
@@ -69,13 +61,13 @@ export class Main extends Scene
         this.load.image('arrow', 'assets/image/arrow.png');
         this.load.image('progress-cht', 'assets/image/progress.png');
         this.load.image('progress-eng', 'assets/image/progress_en.png');
-
+*/
         
         this.load.on('progress', function (value) {
             //console.log(value);
             progressBar.clear();
-            progressBar.fillStyle(0xffffff, 1);
-            progressBar.fillRect(510, 510, 900 * value, 60);
+            progressBar.fillStyle(0xffffff, 0.7);
+            progressBar.fillRect(510, 960, 900 * value, 20);
             
         });
                     
@@ -83,25 +75,29 @@ export class Main extends Scene
         //    console.log(file.src);
         //});
 
-        this.load.on('complete', () => {
+        this.load.once('complete', () => {
             console.log('loading completed');
             progressBar.destroy();
             progressBox.destroy();
-            loadingText.destroy();
-            this.coverBG = this.add.image(960, 540, 'coverBG');
-            this.coverBG.setDisplaySize(1920, 1080);  
-            this.tweens.add({targets: this.coverBG, alpha: {from: 0, to: 1}, duration: 500});
         });
-        
+        this.load.start();
     }
 
     create ()
     {
+        this.coverBG = this.add.image(960, 540, 'coverBG');
+        this.coverBG.setDisplaySize(1920, 1080);  
+        this.tweens.add({
+            targets: this.coverBG, 
+            alpha: {from: 0, to: 1}, 
+            duration: 500,
+            callbacks: () => { this.postLoad(); }
+        });
         /*
         this.log = this.add.text(960, 540, 
             'Debug message', 
             { 
-                font: '50px Courier', 
+                font: '50px Georgia', 
                 fill: '#ff0000', 
                 align: 'center',
             });
@@ -121,7 +117,7 @@ export class Main extends Scene
                 '\n遊戲最佳解像度為1920x1080，如你正在使用 手機/平板電腦等流動裝置，建議啟用 自動旋轉螢幕/橫向模式 以換取較好遊戲體驗。\n\n點擊繼續\n\n\n\
                 The game is best fit in 1920x1080, you could enable Auto-Rotate/Landscape if you are running on a mobile device to gain better experience.\n\nTouch to continue', 
                 { 
-                    font: '32px Courier', 
+                    font: '32px Georgia', 
                     fill: '#ffffff', 
                     align: 'center',
                     lineSpacing: 20,
@@ -157,7 +153,7 @@ export class Main extends Scene
         //const trigger = this.add.video(960, 540, 'trigger');
         //trigger.setScale(1.5);
         
-        const coverText = this.add.image(960, 800, 'coverText');
+        const coverText = this.add.image(960, 800, 'common', 'coverText');
 
         this.tweens.add({
             targets: coverText,
@@ -185,7 +181,7 @@ export class Main extends Scene
                 this.cover.play(false);
                 this.cover.once('complete', () => {
 
-                    let homeButton = this.add.image(149, 138, 'homeBtn');
+                    let homeButton = this.add.image(149, 138, 'common', 'homeBtn');
                     homeButton.setInteractive();
                     homeButton.on('pointerdown', () => {
 
@@ -196,21 +192,22 @@ export class Main extends Scene
                     });
                     
 
-                    let chtButton = this.add.image(1690, 120, 'chtBtn');
-                    let engButton = this.add.image(1800, 120, 'engBtn');
-                    let menu = this.add.image(960, 540, 'chtMenu');
+                    let chtButton = this.add.image(1690, 120, 'common', 'chtBtn');
+                    let engButton = this.add.image(1800, 120, 'common', 'engBtn');
+                    let menu = this.add.image(960, 540, 'common', 'chtMenu');
                     let gameAButton = this.add.rectangle(550, 600, 500, 580, 0x000000, 0);
+                    let gameBButton = this.add.rectangle(1380, 600, 500, 580, 0x000000, 0);
 
                     chtButton.setDisplaySize(80, 80);
                     engButton.setDisplaySize(80, 80);
                     if (this.language === 0) 
                     {
-                        chtButton.setTexture('chtBtnOn');
+                        chtButton.setTexture('common', 'chtBtnOn');
                     }
                     else
                     {
-                        engButton.setTexture('engBtnOn');
-                        menu.setTexture('engMenu');
+                        engButton.setTexture('common', 'engBtnOn');
+                        menu.setTexture('common', 'engMenu');
                     }
                     chtButton.setInteractive();
                     engButton.setInteractive();
@@ -220,9 +217,9 @@ export class Main extends Scene
                         this.sound.play('click');
 
                         this.language = 0;
-                        chtButton.setTexture('chtBtnOn');
-                        engButton.setTexture('engBtn');
-                        menu.setTexture('chtMenu');                        
+                        chtButton.setTexture('common', 'chtBtnOn');
+                        engButton.setTexture('common', 'engBtn');
+                        menu.setTexture('common', 'chtMenu');                        
 
                     });
 
@@ -231,9 +228,9 @@ export class Main extends Scene
                         this.sound.play('click');
 
                         this.language = 1;
-                        chtButton.setTexture('chtBtn');
-                        engButton.setTexture('engBtnOn');
-                        menu.setTexture('engMenu');                        
+                        chtButton.setTexture('common', 'chtBtn');
+                        engButton.setTexture('common', 'engBtnOn');
+                        menu.setTexture('common', 'engMenu');                        
 
                     });
 
@@ -241,12 +238,32 @@ export class Main extends Scene
                     gameAButton.on('pointerdown', () => { 
 
                         gameAButton.disableInteractive();
+                        gameBButton.disableInteractive();
+                        homeButton.disableInteractive();
+                        chtButton.disableInteractive();
+                        engButton.disableInteractive();
+
                         this.sound.play('click');
                         //trigger.destroy();
                         
                         // launch and remove this scene later to prevent dark screen
-                        this.scene.launch('GameA', { language: this.language, videoObj: this.cover });                        
+                        this.scene.launch('GameA', { language: this.language });                        
                         //this.time.delayedCall(5000, () => { this.scene.stop(); });     
+                    });
+
+                    gameBButton.setInteractive();
+                    gameBButton.on('pointerdown', () => { 
+
+                        gameAButton.disableInteractive();
+                        gameBButton.disableInteractive();
+                        homeButton.disableInteractive();
+                        chtButton.disableInteractive();
+                        engButton.disableInteractive();
+
+                        this.sound.play('click');
+                        
+                        // launch and remove this scene later to prevent dark screen
+                        this.scene.launch('GameB', { language: this.language });       
                     });
                 });
 

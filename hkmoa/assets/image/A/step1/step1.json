@@ -1,0 +1,162 @@
+{
+	"textures": [
+		{
+			"image": "step1",
+			"format": "RGBA8888",
+			"size": {
+				"w": 1886,
+				"h": 989
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "A1-bg",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 1280,
+						"h": 720
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 1280,
+						"h": 720
+					},
+					"frame": {
+						"x": 0,
+						"y": 0,
+						"w": 1280,
+						"h": 720
+					}
+				},
+				{
+					"filename": "A1-cloth2",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 305,
+						"h": 333
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 2,
+						"w": 303,
+						"h": 330
+					},
+					"frame": {
+						"x": 1280,
+						"y": 0,
+						"w": 303,
+						"h": 330
+					}
+				},
+				{
+					"filename": "A1-cloth4",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 305,
+						"h": 333
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 2,
+						"w": 303,
+						"h": 330
+					},
+					"frame": {
+						"x": 1583,
+						"y": 0,
+						"w": 303,
+						"h": 330
+					}
+				},
+				{
+					"filename": "A1-cloth5",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 305,
+						"h": 333
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 2,
+						"w": 303,
+						"h": 330
+					},
+					"frame": {
+						"x": 1280,
+						"y": 330,
+						"w": 303,
+						"h": 330
+					}
+				},
+				{
+					"filename": "A1-cloth1",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 305,
+						"h": 332
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 2,
+						"w": 303,
+						"h": 329
+					},
+					"frame": {
+						"x": 1583,
+						"y": 330,
+						"w": 303,
+						"h": 329
+					}
+				},
+				{
+					"filename": "A1-cloth3",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 305,
+						"h": 332
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 2,
+						"w": 303,
+						"h": 329
+					},
+					"frame": {
+						"x": 1583,
+						"y": 659,
+						"w": 303,
+						"h": 329
+					}
+				},
+				{
+					"filename": "A1-cloth6",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 305,
+						"h": 332
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 2,
+						"w": 303,
+						"h": 329
+					},
+					"frame": {
+						"x": 1280,
+						"y": 660,
+						"w": 303,
+						"h": 329
+					}
+				}
+			]
+		}
+	]
+}

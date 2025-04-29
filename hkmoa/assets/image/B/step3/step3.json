@@ -1,0 +1,78 @@
+{
+	"textures": [
+		{
+			"image": "step3",
+			"format": "RGBA8888",
+			"size": {
+				"w": 1717,
+				"h": 911
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "PasteApplied",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 888,
+						"h": 615
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 888,
+						"h": 615
+					},
+					"frame": {
+						"x": 0,
+						"y": 0,
+						"w": 888,
+						"h": 615
+					}
+				},
+				{
+					"filename": "correctBrush",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 300,
+						"h": 300
+					},
+					"spriteSourceSize": {
+						"x": 24,
+						"y": 2,
+						"w": 252,
+						"h": 296
+					},
+					"frame": {
+						"x": 0,
+						"y": 615,
+						"w": 252,
+						"h": 296
+					}
+				},
+				{
+					"filename": "guide",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 829,
+						"h": 560
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 829,
+						"h": 560
+					},
+					"frame": {
+						"x": 888,
+						"y": 0,
+						"w": 829,
+						"h": 560
+					}
+				}
+			]
+		}
+	]
+}

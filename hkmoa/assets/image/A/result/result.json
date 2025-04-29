@@ -1,0 +1,523 @@
+{
+	"textures": [
+		{
+			"image": "result",
+			"format": "RGBA8888",
+			"size": {
+				"w": 2047,
+				"h": 2395
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "gameA-result-bg",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 1280,
+						"h": 720
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 1280,
+						"h": 720
+					},
+					"frame": {
+						"x": 0,
+						"y": 0,
+						"w": 1280,
+						"h": 720
+					}
+				},
+				{
+					"filename": "gameA-result-award5-eng",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 599,
+						"h": 31
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 598,
+						"h": 31
+					},
+					"frame": {
+						"x": 1280,
+						"y": 0,
+						"w": 598,
+						"h": 31
+					}
+				},
+				{
+					"filename": "gameA-result-icon",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 142,
+						"h": 141
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 142,
+						"h": 141
+					},
+					"frame": {
+						"x": 1878,
+						"y": 0,
+						"w": 142,
+						"h": 141
+					}
+				},
+				{
+					"filename": "gameA-result-rank1-eng",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 750,
+						"h": 750
+					},
+					"spriteSourceSize": {
+						"x": 89,
+						"y": 35,
+						"w": 572,
+						"h": 715
+					},
+					"frame": {
+						"x": 1280,
+						"y": 31,
+						"w": 572,
+						"h": 715
+					}
+				},
+				{
+					"filename": "gameA-result-award6-cht",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 195,
+						"h": 72
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 195,
+						"h": 72
+					},
+					"frame": {
+						"x": 1852,
+						"y": 141,
+						"w": 195,
+						"h": 72
+					}
+				},
+				{
+					"filename": "gameA-result-award4-cht",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 186,
+						"h": 78
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 186,
+						"h": 78
+					},
+					"frame": {
+						"x": 1852,
+						"y": 213,
+						"w": 186,
+						"h": 78
+					}
+				},
+				{
+					"filename": "gameA-result-award7-cht",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 186,
+						"h": 73
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 186,
+						"h": 73
+					},
+					"frame": {
+						"x": 1852,
+						"y": 291,
+						"w": 186,
+						"h": 73
+					}
+				},
+				{
+					"filename": "gameA-result-award2-cht",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 186,
+						"h": 71
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 186,
+						"h": 71
+					},
+					"frame": {
+						"x": 1852,
+						"y": 364,
+						"w": 186,
+						"h": 71
+					}
+				},
+				{
+					"filename": "gameA-result-award3-cht",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 185,
+						"h": 78
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 185,
+						"h": 78
+					},
+					"frame": {
+						"x": 1852,
+						"y": 435,
+						"w": 185,
+						"h": 78
+					}
+				},
+				{
+					"filename": "gameA-result-award8-cht",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 185,
+						"h": 72
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 185,
+						"h": 71
+					},
+					"frame": {
+						"x": 1852,
+						"y": 513,
+						"w": 185,
+						"h": 71
+					}
+				},
+				{
+					"filename": "gameA-result-rank2-eng",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 750,
+						"h": 750
+					},
+					"spriteSourceSize": {
+						"x": 89,
+						"y": 35,
+						"w": 572,
+						"h": 715
+					},
+					"frame": {
+						"x": 0,
+						"y": 720,
+						"w": 572,
+						"h": 715
+					}
+				},
+				{
+					"filename": "gameA-result-rank3-eng",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 750,
+						"h": 750
+					},
+					"spriteSourceSize": {
+						"x": 89,
+						"y": 35,
+						"w": 572,
+						"h": 715
+					},
+					"frame": {
+						"x": 572,
+						"y": 720,
+						"w": 572,
+						"h": 715
+					}
+				},
+				{
+					"filename": "gameA-result-rank1-cht",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 750,
+						"h": 750
+					},
+					"spriteSourceSize": {
+						"x": 104,
+						"y": 30,
+						"w": 541,
+						"h": 720
+					},
+					"frame": {
+						"x": 0,
+						"y": 1435,
+						"w": 541,
+						"h": 720
+					}
+				},
+				{
+					"filename": "gameA-result-award8-eng",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 265,
+						"h": 68
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 265,
+						"h": 68
+					},
+					"frame": {
+						"x": 0,
+						"y": 2155,
+						"w": 265,
+						"h": 68
+					}
+				},
+				{
+					"filename": "gameA-result-award3-eng",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 245,
+						"h": 68
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 245,
+						"h": 68
+					},
+					"frame": {
+						"x": 0,
+						"y": 2223,
+						"w": 245,
+						"h": 68
+					}
+				},
+				{
+					"filename": "gameA-result-award6-eng",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 316,
+						"h": 65
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 316,
+						"h": 65
+					},
+					"frame": {
+						"x": 0,
+						"y": 2291,
+						"w": 316,
+						"h": 65
+					}
+				},
+				{
+					"filename": "gameA-result-award2-eng",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 329,
+						"h": 61
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 329,
+						"h": 61
+					},
+					"frame": {
+						"x": 245,
+						"y": 2223,
+						"w": 329,
+						"h": 61
+					}
+				},
+				{
+					"filename": "gameA-result-award7-eng",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 277,
+						"h": 61
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 277,
+						"h": 61
+					},
+					"frame": {
+						"x": 265,
+						"y": 2155,
+						"w": 277,
+						"h": 61
+					}
+				},
+				{
+					"filename": "gameA-result-rank2-cht",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 750,
+						"h": 750
+					},
+					"spriteSourceSize": {
+						"x": 108,
+						"y": 30,
+						"w": 541,
+						"h": 720
+					},
+					"frame": {
+						"x": 541,
+						"y": 1435,
+						"w": 541,
+						"h": 720
+					}
+				},
+				{
+					"filename": "gameA-result-award4-eng",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 245,
+						"h": 61
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 245,
+						"h": 61
+					},
+					"frame": {
+						"x": 542,
+						"y": 2155,
+						"w": 245,
+						"h": 61
+					}
+				},
+				{
+					"filename": "gameA-result-award1-cht",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 377,
+						"h": 39
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 376,
+						"h": 39
+					},
+					"frame": {
+						"x": 0,
+						"y": 2356,
+						"w": 376,
+						"h": 39
+					}
+				},
+				{
+					"filename": "gameA-result-award5-cht",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 343,
+						"h": 38
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 343,
+						"h": 38
+					},
+					"frame": {
+						"x": 316,
+						"y": 2284,
+						"w": 343,
+						"h": 38
+					}
+				},
+				{
+					"filename": "gameA-result-award1-eng",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 530,
+						"h": 35
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 529,
+						"h": 35
+					},
+					"frame": {
+						"x": 574,
+						"y": 2216,
+						"w": 529,
+						"h": 35
+					}
+				},
+				{
+					"filename": "gameA-result-rank3-cht",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 750,
+						"h": 750
+					},
+					"spriteSourceSize": {
+						"x": 124,
+						"y": 30,
+						"w": 494,
+						"h": 720
+					},
+					"frame": {
+						"x": 1082,
+						"y": 1435,
+						"w": 494,
+						"h": 720
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "http://free-tex-packer.com",
+		"version": "0.6.7"
+	}
+}

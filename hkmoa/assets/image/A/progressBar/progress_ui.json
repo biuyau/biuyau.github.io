@@ -1,0 +1,414 @@
+{
+	"textures": [
+		{
+			"image": "progress_ui",
+			"format": "RGBA8888",
+			"size": {
+				"w": 1018,
+				"h": 316
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "progress-bar-fill",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 860,
+						"h": 24
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 860,
+						"h": 24
+					},
+					"frame": {
+						"x": 0,
+						"y": 0,
+						"w": 860,
+						"h": 24
+					}
+				},
+				{
+					"filename": "progress-bar-step-current",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 160,
+						"h": 160
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 1,
+						"w": 158,
+						"h": 158
+					},
+					"frame": {
+						"x": 860,
+						"y": 0,
+						"w": 158,
+						"h": 158
+					}
+				},
+				{
+					"filename": "progress-bar-bg",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 860,
+						"h": 24
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 860,
+						"h": 24
+					},
+					"frame": {
+						"x": 0,
+						"y": 24,
+						"w": 860,
+						"h": 24
+					}
+				},
+				{
+					"filename": "progress-text1-eng",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 330,
+						"h": 50
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 330,
+						"h": 50
+					},
+					"frame": {
+						"x": 0,
+						"y": 48,
+						"w": 330,
+						"h": 50
+					}
+				},
+				{
+					"filename": "progress-text3-cht",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 235,
+						"h": 50
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 235,
+						"h": 50
+					},
+					"frame": {
+						"x": 330,
+						"y": 48,
+						"w": 235,
+						"h": 50
+					}
+				},
+				{
+					"filename": "progress-text5-eng",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 220,
+						"h": 50
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 220,
+						"h": 50
+					},
+					"frame": {
+						"x": 565,
+						"y": 48,
+						"w": 220,
+						"h": 50
+					}
+				},
+				{
+					"filename": "progress-bar-step",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 140,
+						"h": 140
+					},
+					"spriteSourceSize": {
+						"x": 35,
+						"y": 35,
+						"w": 70,
+						"h": 70
+					},
+					"frame": {
+						"x": 785,
+						"y": 48,
+						"w": 70,
+						"h": 70
+					}
+				},
+				{
+					"filename": "progress-text4-cht",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 200,
+						"h": 50
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 200,
+						"h": 50
+					},
+					"frame": {
+						"x": 0,
+						"y": 98,
+						"w": 200,
+						"h": 50
+					}
+				},
+				{
+					"filename": "progress-text2-eng",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 200,
+						"h": 40
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 200,
+						"h": 40
+					},
+					"frame": {
+						"x": 200,
+						"y": 98,
+						"w": 200,
+						"h": 40
+					}
+				},
+				{
+					"filename": "progress-text1-cht",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 150,
+						"h": 50
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 150,
+						"h": 50
+					},
+					"frame": {
+						"x": 400,
+						"y": 98,
+						"w": 150,
+						"h": 50
+					}
+				},
+				{
+					"filename": "progress-text2-cht",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 145,
+						"h": 60
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 145,
+						"h": 60
+					},
+					"frame": {
+						"x": 200,
+						"y": 138,
+						"w": 145,
+						"h": 60
+					}
+				},
+				{
+					"filename": "progress-text5-cht",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 145,
+						"h": 55
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 145,
+						"h": 55
+					},
+					"frame": {
+						"x": 0,
+						"y": 148,
+						"w": 145,
+						"h": 55
+					}
+				},
+				{
+					"filename": "progress-text6-eng",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 145,
+						"h": 50
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 145,
+						"h": 50
+					},
+					"frame": {
+						"x": 550,
+						"y": 98,
+						"w": 145,
+						"h": 50
+					}
+				},
+				{
+					"filename": "progress-bar-step-complete",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 140,
+						"h": 140
+					},
+					"spriteSourceSize": {
+						"x": 27,
+						"y": 26,
+						"w": 88,
+						"h": 88
+					},
+					"frame": {
+						"x": 695,
+						"y": 98,
+						"w": 88,
+						"h": 88
+					}
+				},
+				{
+					"filename": "progress-text3-eng",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 125,
+						"h": 50
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 125,
+						"h": 50
+					},
+					"frame": {
+						"x": 783,
+						"y": 158,
+						"w": 125,
+						"h": 50
+					}
+				},
+				{
+					"filename": "progress-text6-cht",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 100,
+						"h": 50
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 100,
+						"h": 50
+					},
+					"frame": {
+						"x": 908,
+						"y": 158,
+						"w": 100,
+						"h": 50
+					}
+				},
+				{
+					"filename": "progress-text4-eng",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 120,
+						"h": 50
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 120,
+						"h": 50
+					},
+					"frame": {
+						"x": 345,
+						"y": 148,
+						"w": 120,
+						"h": 50
+					}
+				},
+				{
+					"filename": "progress-bar-step-current-fill",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 120,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 1,
+						"w": 118,
+						"h": 118
+					},
+					"frame": {
+						"x": 465,
+						"y": 148,
+						"w": 118,
+						"h": 118
+					}
+				},
+				{
+					"filename": "progress-bar-step-current-frame",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 120,
+						"h": 120
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 1,
+						"w": 118,
+						"h": 118
+					},
+					"frame": {
+						"x": 345,
+						"y": 198,
+						"w": 118,
+						"h": 118
+					}
+				}
+			]
+		}
+	]
+}
